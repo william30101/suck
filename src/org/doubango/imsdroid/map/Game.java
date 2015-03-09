@@ -350,25 +350,27 @@ public class Game {//�t��k���O
 	public class rRUNThread implements Runnable {
 		public void run() {
 
-			if((source[0]-target[0] ==  0 && source[1]-target[1] ==  1)||
-					   (source[0]-target[0] == -1 && source[1]-target[1] ==  1)||
-					   (source[0]-target[0] == -1 && source[1]-target[1] ==  0)||
-					   (source[0]-target[0] == -1 && source[1]-target[1] == -1)||
-					   (source[0]-target[0] ==  0 && source[1]-target[1] == -1)||
-					   (source[0]-target[0] ==  1 && source[1]-target[1] == -1)||
-					   (source[0]-target[0] ==  1 && source[1]-target[1] ==  0)||
-					   (source[0]-target[0] ==  1 && source[1]-target[1] ==  1)){
+			if((source[0]-finaltarget[0] ==  0 && source[1]-finaltarget[1] ==  1)||
+					   (source[0]-finaltarget[0] == -1 && source[1]-finaltarget[1] ==  1)||
+					   (source[0]-finaltarget[0] == -1 && source[1]-finaltarget[1] ==  0)||
+					   (source[0]-finaltarget[0] == -1 && source[1]-finaltarget[1] == -1)||
+					   (source[0]-finaltarget[0] ==  0 && source[1]-finaltarget[1] == -1)||
+					   (source[0]-finaltarget[0] ==  1 && source[1]-finaltarget[1] == -1)||
+					   (source[0]-finaltarget[0] ==  1 && source[1]-finaltarget[1] ==  0)||
+					   (source[0]-finaltarget[0] ==  1 && source[1]-finaltarget[1] ==  1)){
 				SendCmdToBoardAlgorithm.driectiontimeMode_change = 2;
 				if(runAlgorithmEND == true){
 					runAlgorithm();
 				}
 			}else if (source[0] == target[0] && source[1] == target[1]) {
-				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
+//				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
+				SendCmdToBoardAlgorithm.driectiontimeMode_change = 4;
 //				if(runAlgorithmEND == true){
 //					runAlgorithm();
 //				}
 			}else {
-				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
+//				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
+				SendCmdToBoardAlgorithm.driectiontimeMode_change = 4;
 				if(runAlgorithmEND == true){
 					runAlgorithm();
 				}

@@ -236,6 +236,24 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/BLEWriteBtn"
         android:layout_alignRight="@+id/BLEconnectStatus"
-        android:text="TestAngle" />
+        android:text="TestAngle +40" />
+
+    <Button
+        android:id="@+id/testanglebtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/testanglebtn"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@+id/Axis_show_X"
+        android:text="TestAngle -40" />
+
+    <Button
+        android:id="@+id/testanglebtn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/testanglebtn"
+        android:text="TestAngle 0" />
 
 </RelativeLayout>

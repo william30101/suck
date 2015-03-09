@@ -81,7 +81,7 @@ public class SetUIFunction {
 	private BLEDeviceControlActivity BLEDevCon;
 
 	// For map use
-	private Button jsRunBtn, navigationBtn,testanglebtn;
+	private Button jsRunBtn, navigationBtn,testanglebtn,testanglebtn2,testanglebtn3;
 	public Button ThreadSTOP;
 
 	GameView gameView;
@@ -309,6 +309,12 @@ public class SetUIFunction {
 		testanglebtn = (Button) globalActivity.findViewById(R.id.testanglebtn);
 		testanglebtn.setOnClickListener(onClickListener);
 		
+		testanglebtn2 = (Button) globalActivity.findViewById(R.id.testanglebtn2);
+		testanglebtn2.setOnClickListener(onClickListener);
+		
+		testanglebtn3 = (Button) globalActivity.findViewById(R.id.testanglebtn3);
+		testanglebtn3.setOnClickListener(onClickListener);
+		
 		uartRec = new UartReceive();
 		uartRec.RunRecThread();
 	}
@@ -389,6 +395,9 @@ public class SetUIFunction {
 
 	};
 
+	public void Get_Axis_func(){
+		handler.postDelayed(Axis_trigger_thread, Axis_GetPollTime);
+	}
 	/* Set Navigation & others Button onClickListener */
 	private Button.OnClickListener onClickListener = new OnClickListener() {
 		int indicator;
@@ -399,8 +408,17 @@ public class SetUIFunction {
 			indicator = v.getId();
 			switch (indicator) {
 			case R.id.testanglebtn:
-				SendCmdToBoardAlgorithm.testangle = 35;
+				SendCmdToBoardAlgorithm.testangle = 40;
 				break;
+				
+			case R.id.testanglebtn2:
+				SendCmdToBoardAlgorithm.testangle = -40;
+				break;
+				
+			case R.id.testanglebtn3:
+				SendCmdToBoardAlgorithm.testangle = 0;
+				break;
+				
 			case R.id.right90btn:
 //				try {
 //					SendToBoard("RotateAngle P 45");
@@ -1040,6 +1058,7 @@ public class SetUIFunction {
 
 	public class Axis_thread implements Runnable {
 		@SuppressLint("UseValueOf") public void run() {
+			Log.d("jamesdebug", "===================InfoStart======================");
 			if (SendCmdToBoardAlgorithm.Axis_RunDrawCircle_StopUpdate == false)
 			{
 
@@ -1128,7 +1147,7 @@ public class SetUIFunction {
 				
 
 				
-			}
+//SendCmdToBoardAlgorithm.Axis_RunDrawCircle_StopUpdate == false			}
 			
 			
 				gameView.postInvalidate();
@@ -1147,6 +1166,7 @@ public class SetUIFunction {
 			XMPPSet.XMPPSendText("william1", "start " + game.source[0] +
 					" " + game.source[1]);
 			
+		}
 		}
 		}
 
