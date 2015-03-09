@@ -189,6 +189,14 @@
         android:text="Navigation" />
 
     <Button
+        android:id="@+id/drawMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/navigation"
+        android:layout_above="@+id/left90btn"
+        android:text="DrawMap" />
+
+    <Button
         android:id="@+id/getAxisBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

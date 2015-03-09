@@ -80,6 +80,8 @@ public class Game {//�t��k���O
 	private Handler myHandler = new Handler(){//�Ψӧ�sUI�����
         public void handleMessage(Message msg){
         	if(msg.what == 1){//���ܫ��s���A
+        	    boolean result = (Boolean)msg.obj;
+        	    if (!result) gameView.showToastMessage("Can't navigate form source to target!");
 				//goButton.setEnabled(true);
         		//runButton.setEnabled(true);
         	}
@@ -490,6 +492,7 @@ public class Game {//�t��k���O
 						}
 						int count=0;
 						boolean flag=true;
+						boolean isPathExist = false;
 						int[][] start={
 							{source[0],source[1]},
 							{source[0],source[1]}
@@ -498,6 +501,11 @@ public class Game {//�t��k���O
 						//queue.add(start);
 						Log.i("jamesdebug", "source =" + start[0][0] +" " + start[0][1] + " " + start[1][0] + " " + start[1][1]);
 						while(flag){					
+						    if (queue.isEmpty()) {
+						        //Log.i("Terry", "Can't find the way to target");
+						        isPathExist = false;
+						        break;
+						    }
 							int[][] currentEdge=queue.poll();//�q������X��
 							int[] tempTarget=currentEdge[1];//��X���䪺�ت��I
 							//�P�_�ت��I�O�_�h�L�A�Y�h�L�h�����i�J�U���j��
@@ -514,7 +522,9 @@ public class Game {//�t��k���O
 							try{Thread.sleep(timeSpan);}catch(Exception e){e.printStackTrace();}
 			 				//�P�_���_���ت��I
 							if(tempTarget[0]==target[0]&&tempTarget[1]==target[1]){
-								break;
+							    //Log.i("Terry", "Find the way to target");
+							    isPathExist = true;
+							    break;
 							}
 							//�N�Ҧ��i�઺��J��C
 							int currCol=tempTarget[0];
@@ -525,7 +535,7 @@ public class Game {//�t��k���O
 								if(i==0&&j==0){continue;}
 								if(currRow+i>=0&&currRow+i<MapList.map[mapId].length
 										&&currCol+j>=0&&currCol+j<MapList.map[mapId][0].length&&
-								map[currRow+i][currCol+j]!=1){
+								map[currRow+i][currCol+j]!=1 && map[currRow+i][currCol+j]!=2){
 									int[][] tempEdge={
 										{tempTarget[0],tempTarget[1]},
 										{currCol+j,currRow+i}
@@ -534,10 +544,10 @@ public class Game {//�t��k���O
 								}
 							}
 						}
-						setPathFlag(true);
+						setPathFlag(isPathExist);
 						
 						gameView.postInvalidate();
-						Message msg1 = myHandler.obtainMessage(1);
+						Message msg1 = myHandler.obtainMessage(1, isPathExist);
 						myHandler.sendMessage(msg1);//�]�w���s���i�Ω�
 						Message msg2 = myHandler.obtainMessage(2, count);
 						myHandler.sendMessage(msg2);//����TextView��r

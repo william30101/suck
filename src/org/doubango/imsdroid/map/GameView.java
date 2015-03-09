@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GameView extends View {
 
@@ -36,7 +37,7 @@ public class GameView extends View {
 	GameView GV;
 	public Spinner mySpinner;// Spinner���ޥ�
 	public TextView CDTextView;
-	int span = 16;
+	int span = 15;
 	int theta = 0;
 	public static boolean drawCircleFlag = false, turnToBigMap = false;
 
@@ -94,6 +95,8 @@ public class GameView extends View {
 	int width, height, screenWidth, screenHeight, mapWidth, mapHeight;
 	int xcoordinate = 5, ycoordinate = 5;
 	private boolean touchDown = false, zoomout = false, isZoom = false;
+	public boolean isDrawMap = false;
+	private Toast toast;
 
 	private Handler myHandler = new Handler() {
 		public void handleMessage(Message msg) {
@@ -185,10 +188,8 @@ public class GameView extends View {
 		paint.setColor(Color.BLACK);
 		paint.setStyle(Style.STROKE);
 		// canvas.drawRect(5, 55, 325, 376, paint);
-		map = game.map;
-		// Log.i(TAG,"getting onMyDraw");
-		row = map.length;
-		col = map[0].length;
+
+		getMapSize();
 		
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
@@ -302,40 +303,10 @@ public class GameView extends View {
 			Log.i("shinhua", "x: " + event.getX() + " y: " + event.getY());
 		
 			if(event.getX() >= fixWidthMapData && event.getY() <= fixWidthMapData){
-				
-				//span = 30;
-				//span = 15;
-				//getMapSize();
-	
-				//xcoordinate = (int) ((screenWidth / 2) - (mapWidth / 2)); 
-				//ycoordinate = (int) ((screenHeight / 2) - (mapHeight / 2));
-				
-				//fixWidthMapData = xcoordinate; 	// ZoomIn Screen in the right
-				//fixWidthMapData = 0; 			// ZoomIn Screen in the middle
-				//fixHeightMapData = ycoordinate;
-	
-				isZoom = false;
-				touchDown = true;
-	
-				//requestLayout();
+			    changeMapZoomIn(true);
 			}
-			
 			drawZoomMap(event);
 			
-		} else if (event.getAction() == MotionEvent.ACTION_UP) {
-			if (zoomout) {
-				
-				//isZoom = !isZoom;
-				//zoomout = false;
-
-				//span = 15;
-				//xcoordinate = ycoordinate = 5;
-				//fixWidthMapData = fixHeightMapData = 5;
-
-				//requestLayout();
-				drawZoomMap(event);
-
-			}
 		}
 		return true;
 
@@ -363,13 +334,28 @@ public class GameView extends View {
 //				Log.i("jamesdebug","touch target draw before");
 				// Setting net Target postion
 			//	if (touchDown && pos[0] != -1 && pos[1] != -1) {
-				if ( pos[0] != -1 && pos[1] != -1) {
-					MapList.target[0][0] = pos[0];
-					MapList.target[0][1] = pos[1];
-					MapList.target1[0][0] = pos[0];
-					MapList.target1[0][1] = pos[1];
-//					Log.i("jamesdebug","touch target draw after");
-					zoomout = true;
+				if ( pos[0] != -1 && pos[1] != -1 && gridY != 0
+				        && gridX != 0 && gridY != row - 1 && gridX != col - 1) {
+				    if (isDrawMap) {
+				        switch(map[gridY][gridX]) {
+				            case 0:
+				                map[gridY][gridX] = 1;
+				                break;
+				            case 1:
+				                map[gridY][gridX] = 2;
+				                break;
+				            case 2:
+				                map[gridY][gridX] = 0;
+				                break;
+				        }
+				    } else {
+				        MapList.target[0][0] = pos[0];
+				        MapList.target[0][1] = pos[1];
+				        MapList.target1[0][0] = pos[0];
+				        MapList.target1[0][1] = pos[1];
+				        //Log.i("jamesdebug","touch target draw after");
+				        //zoomout = true;
+				    }
 				}
 
 				// Update Target bitmap position
@@ -388,6 +374,56 @@ public class GameView extends View {
 			}
 		}
 	}
+
+	public void execDrawMap(boolean drawMap) {
+	    if (drawMap) {
+	        //changeMapZoomIn(true);
+	        isDrawMap = true;
+	        //game.goButton.setEnabled(false);     //It will crash at james's version
+	        //game.runButton.setEnabled(false);
+	    } else {
+	        //changeMapZoomIn(false);
+	        isDrawMap = false;
+	        //game.goButton.setEnabled(true);
+	    }
+	}
+
+    public void changeMapZoomIn(boolean zoomIn) {
+        if (zoomIn) {
+            //span = 30;
+            //getMapSize();
+
+            //xcoordinate = (int) ((screenWidth / 2) - (mapWidth / 2));
+            //ycoordinate = (int) ((screenHeight / 2) - (mapHeight / 2));
+
+            //fixWidthMapData = xcoordinate;    // ZoomIn Screen in the right
+            //fixWidthMapData = 0;            // ZoomIn Screen in the middle
+            //fixHeightMapData = ycoordinate;
+
+            //isZoom = true;
+            isZoom = false;
+            touchDown = true;
+        }/*else {
+            // Let map screen change back into small size
+            isZoom = !isZoom;
+            zoomout = false;
+
+            span = 15;
+            xcoordinate = ycoordinate = 5;
+            fixWidthMapData = fixHeightMapData = 5;
+        }*/
+        requestLayout();
+    }
+
+    public void showToastMessage(CharSequence text) {
+        if (toast == null) {
+            toast = Toast.makeText(mContext, text, Toast.LENGTH_SHORT);
+        } else {
+            toast.setText(text);
+            toast.setDuration(Toast.LENGTH_SHORT);
+        }
+        toast.show();
+    }
 
 	public int[] getPos(MotionEvent e) {// ±N®y¼Ð´«ºâ¦¨°}¦Cªººû¼Æ
 		int[] pos = new int[2];
@@ -431,7 +467,7 @@ public class GameView extends View {
 			// Avoid map object be used on onMyDraw function
 			synchronized (map) {
 				try {
-					if (map[yPos][xPos] == 0) {
+					if (map[yPos][xPos] == 0 || isDrawMap) {
 						// Log.i(TAG, "draw on map[yPos][xPos]= "
 						// + map[yPos][xPos] + "( xPos , yPos ) = ( "
 						// + xPos + " , " + yPos + " )");
@@ -526,9 +562,7 @@ public class GameView extends View {
 
 	public void setGridSize(){
 		/* The setGridSize */
-		map = game.map;
-		row = map.length;
-		col = map[0].length;
+	    getMapSize();
 		
 		/* Draw Map position on the upper left */
 		if(isZoom){
