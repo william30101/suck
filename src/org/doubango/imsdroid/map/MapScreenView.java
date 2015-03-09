@@ -83,8 +83,8 @@ public class MapScreenView{
 		navigationBtn.setOnClickListener(
         	new Button.OnClickListener(){
 				public void onClick(View v) {
-					game.runAlgorithm();
-//					game.suckccc();
+//					game.runAlgorithm();
+					game.suckccc();
 					//navigationBtn.setEnabled(false);
 					//sendCmdToBoardAlgorithm.RobotStart(gameView, game, XMPPSet1);
 					

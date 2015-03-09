@@ -87,7 +87,7 @@ public class SendCmdToBoardAlgorithm {
 	public static GameView _gameView ;
 	public static Game _game ;
 	private static XMPPSetting _inXMPPSet;
-	
+	public static int driectiontimeMode_change = 0;
 	update update;
 	
 	public Handler handler = new Handler();
@@ -118,7 +118,7 @@ public class SendCmdToBoardAlgorithm {
 	}
 	
 	public void RobotStop(){
-		Log.i("jamesdebug","--------------------");
+//		Log.i("jamesdebug","--------------------");
 		RUN_THREAD = false;
 		update = new update();
 		update.interrupt(); 
@@ -126,13 +126,12 @@ public class SendCmdToBoardAlgorithm {
 	
 	public void RobotStart(final GameView gameView1 , final Game game1 , final XMPPSetting inXMPPSet1) 
 	{
+		Log.i("jamesdebug", "Robot start running");
 		gameView = MapScreenView.gameView;
 //		game = game1;
 		game = new Game();
 		update = new update();
-		Log.i("jamesdebug", "Robot start williamxxx6");
 		update.start();
-		Log.i("jamesdebug", "Robot start williamxxx7");
 //		handler.postDelayed(update, 30);
 	}
 	
@@ -297,9 +296,6 @@ public class SendCmdToBoardAlgorithm {
 		};
 		
 		Axis_InitialCompass = Axis_eComAngle_Array[0];
-		Log.d("jamescompass", "=========================compass_in======================================");
-		Log.d("jamescompass", "=========================compass_in======================================");
-		Log.d("jamescompass", "=========================compass_in======================================");
 	}
 	
 	/*
@@ -396,429 +392,435 @@ public class SendCmdToBoardAlgorithm {
 //			}
 		
 		switch (compassTableSelected) {
-		
-		case 0:
-			retval = FindCompass_F( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+			case 0:
+				retval = FindCompass_F( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+//				if( UartReceive.tempInt[2] - Axis_InitialCompass > 30 ){
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+//				}else if ( UartReceive.tempInt[2] - Axis_InitialCompass > 30 ){			
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				
+				break;
+				
+			case 1:
+				retval = FindCompass_RF( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+//				if( UartReceive.tempInt[2] - Axis_eComAngle_Array[1] > 30 ){
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+//				}else if ( UartReceive.tempInt[2] - Axis_eComAngle_Array[1] > 30 ){
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			}
-			
-			break;
-			
-		case 1:
-			retval = FindCompass_RF( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				
+				break;
+				
+			case 2:
+				retval = FindCompass_R( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+//				if( UartReceive.tempInt[2] - Axis_eComAngle_Array[2] > 30 ){
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+//				}else if ( UartReceive.tempInt[2] - Axis_eComAngle_Array[2] > 30 ){
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				break;
+				
+			case 3:
+				retval = FindCompass_RB( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+//				if( UartReceive.tempInt[2] - Axis_eComAngle_Array[3] > 30 ){
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+//				}else if ( UartReceive.tempInt[2] - Axis_eComAngle_Array[3] > 30 ){
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			}
-			
-			break;
-			
-		case 2:
-			retval = FindCompass_R( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				break;
+				
+			case 4:
+				retval = FindCompass_B( dx, dy );
+				
+				//test1
+	//			try {
+	//				Thread.sleep(1000);
+	//			} catch (InterruptedException e) {
+	//				// TODO Auto-generated catch block
+	//				e.printStackTrace();
+	//			}
+	//			
+	//			if( testangle > 30 ){
+	//				for (int i = 0; i < 2; i++){
+	////					String xxx = "direction forleft";
+	//					String xxx = "direction left";
+	//					String[] inM2 = xxx.split("\\s+");
+	//					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+	//					UartCmd.SendMsgUart(1, cmdByte2);
+	//					
+	//					Log.i("jamesdebug", "************************left**********************");
+	//					try {
+	//						Thread.sleep(50);
+	//					} catch (InterruptedException e) {
+	//						// TODO Auto-generated catch block
+	//						e.printStackTrace();
+	//					}
+	//				}
+	//			
+	//			}else if (testangle < 30){
+	//				for (int i = 0; i < 2; i++){
+	////					String yyy = "direction forRig";
+	//					String yyy = "direction right";
+	//					String[] inM2 = yyy.split("\\s+");
+	//					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+	//					UartCmd.SendMsgUart(1, cmdByte2);
+	//					
+	//					try {
+	//						Thread.sleep(50);
+	//					} catch (InterruptedException e) {
+	//						// TODO Auto-generated catch block
+	//						e.printStackTrace();
+	//					}
+	//				}
+	//			}
+				
+				break;
+	
+			case 5:
+				retval = FindCompass_LB( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				break;
+				
+			case 6:
+				retval = FindCompass_L( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			}
-			break;
-			
-		case 3:
-			retval = FindCompass_RB( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				
+				break;
+				
+			case 7:
+				retval = FindCompass_LF( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				break;
+				
+			case 8:
+				retval = FindCompass_F( dx, dy );
+				
+				//test1
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				if( testangle > 30 ){
+					for (int i = 0; i < 2; i++){
+	//					String xxx = "direction forleft";
+						String xxx = "direction left";
+						String[] inM2 = xxx.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						Log.i("jamesdebug", "************************left**********************");
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+				}else if (testangle < 30){
+					for (int i = 0; i < 2; i++){
+	//					String yyy = "direction forRig";
+						String yyy = "direction right";
+						String[] inM2 = yyy.split("\\s+");
+						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+						UartCmd.SendMsgUart(1, cmdByte2);
+						
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
+				break;
+				
+			default:
+				break;
+				
 			}
-			break;
-			
-		case 4:
-			retval = FindCompass_B( dx, dy );
-			
-			//test1
-//			try {
-//				Thread.sleep(1000);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
-//			if( testangle > 30 ){
-//				for (int i = 0; i < 2; i++){
-////					String xxx = "direction forleft";
-//					String xxx = "direction left";
-//					String[] inM2 = xxx.split("\\s+");
-//					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-//					UartCmd.SendMsgUart(1, cmdByte2);
-//					
-//					Log.i("jamesdebug", "************************left**********************");
-//					try {
-//						Thread.sleep(50);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
-//			
-//			}else if (testangle < 30){
-//				for (int i = 0; i < 2; i++){
-////					String yyy = "direction forRig";
-//					String yyy = "direction right";
-//					String[] inM2 = yyy.split("\\s+");
-//					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-//					UartCmd.SendMsgUart(1, cmdByte2);
-//					
-//					try {
-//						Thread.sleep(50);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
-//			}
-			
-			break;
-
-		case 5:
-			retval = FindCompass_LB( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-			break;
-			
-		case 6:
-			retval = FindCompass_L( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-			
-			break;
-			
-		case 7:
-			retval = FindCompass_LF( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-			break;
-			
-		case 8:
-			retval = FindCompass_F( dx, dy );
-			
-			//test1
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			if( testangle > 30 ){
-				for (int i = 0; i < 2; i++){
-//					String xxx = "direction forleft";
-					String xxx = "direction left";
-					String[] inM2 = xxx.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					Log.i("jamesdebug", "************************left**********************");
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			
-			}else if (testangle < 30){
-				for (int i = 0; i < 2; i++){
-//					String yyy = "direction forRig";
-					String yyy = "direction right";
-					String[] inM2 = yyy.split("\\s+");
-					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-					UartCmd.SendMsgUart(1, cmdByte2);
-					
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-			break;
-			
-		default:
-			break;
-			
-		}
 		
 		return retval;
 	}
@@ -944,38 +946,38 @@ public class SendCmdToBoardAlgorithm {
 			
 			Axis_SendeComAngle_to32_L = "RotateAngle P 90";
 			Axis_simulator_com = 0;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[0];
 			
 		} else if (dx == -1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_L = "RotateAngle P 135";
 			Axis_simulator_com = 45;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[1];
 		} else if (dx == -1 && dy == 0)  {
 			
 			Axis_SendeComAngle_to32_L = "RotateAngle P 180";
 			Axis_simulator_com = 90;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[2];
 		}  else if (dx == -1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_L = "RotateAngle N 135";
 			Axis_simulator_com = 135;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[3];
 		} else if (dx == 0 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_L = "RotateAngle N 90";
 			Axis_simulator_com = 180;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[4];
 		}  else if (dx == 1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_L = "RotateAngle N 45";
 			Axis_simulator_com = 225;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[5];
 		} else if (dx == 1 && dy == 0)   {
 			
 			Axis_SendeComAngle_to32_L = "direction forward";
 			Axis_simulator_com = 270;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[6];
 			
 		} else if (dx == 1 && dy == 1)  {
 			
@@ -994,42 +996,42 @@ public class SendCmdToBoardAlgorithm {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle P 135";
 			Axis_simulator_com = 0;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[0];
 			
 		} else if (dx == -1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle P 180";
 			Axis_simulator_com = 45;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[1];
 			
 		} else if (dx == -1 && dy == 0)  {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle N 135";
 			Axis_simulator_com = 90;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[2];
 			
 		} else if (dx == -1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle N 90";
 			Axis_simulator_com = 135;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[3];
 		} else if (dx == 0 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle P 45";
 			Axis_simulator_com = 180;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[4];
 			
 		} else if (dx == 1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_LB = "direction forward";
 			Axis_simulator_com = 225;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[5];
 			
 		} else if (dx == 1 && dy == 0)   {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle P 45";
 			Axis_simulator_com = 270;
-//			Axis_simulator_com = Axis_eComAngle_Array[7];
+//			Axis_simulator_com = Axis_eComAngle_Array[6];
 		} else if (dx == 1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_LB = "RotateAngle P 90";
@@ -1049,40 +1051,49 @@ public class SendCmdToBoardAlgorithm {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 180";
 			Axis_simulator_com = 0;
+//			Axis_simulator_com = Axis_eComAngle_Array[0];
 			
 		} else if (dx == -1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle N 135";
 			Axis_simulator_com = 45;
+//			Axis_simulator_com = Axis_eComAngle_Array[1];
 			
 		} else if (dx == -1 && dy == 0)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle N 90";
 			Axis_simulator_com = 90;
+//			Axis_simulator_com = Axis_eComAngle_Array[2];
 			
 		} else if (dx == -1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle N 45";
 			Axis_simulator_com = 135;
+//			Axis_simulator_com = Axis_eComAngle_Array[3];
 			
 		} else if (dx == 0 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_B = "direction forward";
 			Axis_simulator_com = 180;
+//			Axis_simulator_com = Axis_eComAngle_Array[4];
 			
 		} else if (dx == 1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 45";
 			Axis_simulator_com = 225;
+//			Axis_simulator_com = Axis_eComAngle_Array[5];
 			
 		} else if (dx == 1 && dy == 0)   {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 90";
 			Axis_simulator_com = 270;
+//			Axis_simulator_com = Axis_eComAngle_Array[6];
+			
 		} else if (dx == 1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 135";
 			Axis_simulator_com = 315;
+//			Axis_simulator_com = Axis_eComAngle_Array[7];
 			
 		}
 
@@ -1337,7 +1348,7 @@ public class SendCmdToBoardAlgorithm {
 //		return Axis_SendeComAngle_to32;
 //	}
 
-	public static void Direction_times(int times, String xxx, XMPPSetting inXMPPSet)
+	public static void Direction_times(int times, String xxx, XMPPSetting inXMPPSet) throws IOException
 	{
 
 		Log.d("jamesdebug", "xxx = " + xxx);
@@ -1437,10 +1448,50 @@ public class SendCmdToBoardAlgorithm {
 			
 //			 String decoded = new String(cmdByte, "ISO-8859-1");
 		} else if (xxx == "direction forward"){
-			try {
-				
-				Thread.sleep(200);
-				
+			
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//			
+////			if( UartReceive.tempInt[2] - Axis_InitialCompass > 30 ){
+//			if( testangle > 30 ){
+//				for (int i = 0; i < 2; i++){
+////					String xxxx = "direction forleft";
+//					String xxxx = "direction left";
+//					String[] inM2 = xxx.split("\\s+");
+//					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+//					UartCmd.SendMsgUart(1, cmdByte2);
+//					
+//					Log.i("jamesdebug", "************************left**********************");
+//					try {
+//						Thread.sleep(50);
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+////			}else if ( UartReceive.tempInt[2] - Axis_InitialCompass > 30 ){			
+//			}else if (testangle < 30){
+//				for (int i = 0; i < 2; i++){
+////					String yyy = "direction forRig";
+//					String yyy = "direction right";
+//					String[] inM2 = yyy.split("\\s+");
+//					byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+//					UartCmd.SendMsgUart(1, cmdByte2);
+//					
+//					try {
+//						Thread.sleep(50);
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+			
+			try {	
+				Thread.sleep(200);	
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -1449,7 +1500,7 @@ public class SendCmdToBoardAlgorithm {
 			{
 				
 //				inXMPPSet.XMPPSendText("james1", xxx);
-//				Log.d("jamesdebug", "Direction_" + xxx +" _times: " + i);
+				Log.d("jamesdebug", "Direction_" + xxx +" _times: " + i);
 				
 				try {
 					
@@ -1506,124 +1557,103 @@ public class SendCmdToBoardAlgorithm {
 				
 				//PathQueue[size - 1] == Start  . . .  PathQueue[0] == Target
 				pathQ = GameView.getPathQueue();
-				Log.i("jamesdebug", "Robot start running222");
 
-//james
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(300);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				
-//				try {
-//					Thread.sleep(300);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-				
-
 				for (int i = pathQ.size() - 1; i >= 0; i--) {
 					
 					if(RUN_THREAD){
-//james						
-					try {
-//						Thread.sleep(1000);
-						Thread.sleep(300);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-//					try {
-//						Thread.sleep(300);
-//					} catch (Exception e) {
-//						e.printStackTrace();
-//					}
-					Log.i("jamesdebug", "Robot start running333");
-					gameView.drawCount = i;
-					gameView.postInvalidate();
-					try {
-						Thread.sleep(50);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-
-					int[][] axis = pathQ.get(i);
-					int[][] old_axis = new int[2][2];
-
-					//if ((old_axis = gameView.getPathQueue().get(
-					//		gameView.getPathQueue().size() - 2)) != null)
-					//	gameView.over2Grid = true;
-					originalX = axis[1][0];
-					originalY = axis[1][1];
-					nextX = axis[0][0];
-					nextY = axis[0][1];
-
-
-					
-					gameView.postInvalidate();
-					try {
-						Thread.sleep(50);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					
-					if (  i <  (pathQ.size() - 1) )
-						old_axis = pathQ.get( i  + 1);
-					else
-					{
-						// If move only 2 times , we don't have pre move data.
-						old_axis[0][0] = nextX;
-						old_axis[0][1] = nextY;
-						old_axis[1][0] = originalX;
-						old_axis[1][1] = originalY;
-					}
-					// Move on horizontal direction
-					if (i <  (pathQ.size() - 1))
-					{
-						old_dx = originalX - old_axis[1][0];
-						old_dy = originalY - old_axis[1][1];
-					}
-					else
-					{
-						// If first move , default forward direction.
-						old_dx = 0;
-						old_dy = 1;
-					}
-
-					Log.i(TAG, " ( oldX , oldY ) = (" + old_axis[1][0] + " , " + old_axis[1][1]+
-							")  (oX , oY) = (" + originalX + " , " + originalY + 
-							")  (nX , nY) = (" + nextX+ " , " + nextY + ")");
-					
-					int dx = nextX - originalX;
-					int dy = nextY - originalY;
-											
-					String dir = "ppp";
-					try {
-						dir = getCompassTable(Axis_simulator_com, 0, dx, dy, inXMPPSet);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-//					String dir = getCompassTable(Axis_simulator_com, 270, dx, dy);
-					
-					//String dir = getCompassTable(UartReceive.tempInt[2], Axis_eComAngle_Array[0], dx, dy);
-					if(RUN_THREAD){
-					Log.i("jamesdebug", "Robot start running444");
-					Direction_times(9, dir, inXMPPSet);
-					
-
-					}
-					
+						try {
+							Thread.sleep(300);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						gameView.drawCount = i;
+						gameView.postInvalidate();
+						try {
+							Thread.sleep(50);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+	
+						int[][] axis = pathQ.get(i);
+						int[][] old_axis = new int[2][2];
+	
+						//if ((old_axis = gameView.getPathQueue().get(
+						//		gameView.getPathQueue().size() - 2)) != null)
+						//	gameView.over2Grid = true;
+						originalX = axis[1][0];
+						originalY = axis[1][1];
+						nextX = axis[0][0];
+						nextY = axis[0][1];
+	
+						gameView.postInvalidate();
+						
+						try {
+							Thread.sleep(50);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
+						if (  i <  (pathQ.size() - 1) )
+							old_axis = pathQ.get( i  + 1);
+						else
+						{
+							// If move only 2 times , we don't have pre move data.
+							old_axis[0][0] = nextX;
+							old_axis[0][1] = nextY;
+							old_axis[1][0] = originalX;
+							old_axis[1][1] = originalY;
+						}
+						// Move on horizontal direction
+						if (i <  (pathQ.size() - 1))
+						{
+							old_dx = originalX - old_axis[1][0];
+							old_dy = originalY - old_axis[1][1];
+						}
+						else
+						{
+							// If first move , default forward direction.
+							old_dx = 0;
+							old_dy = 1;
+						}
+	
+						Log.i(TAG, " ( oldX , oldY ) = (" + old_axis[1][0] + " , " + old_axis[1][1]+
+								")  (oX , oY) = (" + originalX + " , " + originalY + 
+								")  (nX , nY) = (" + nextX+ " , " + nextY + ")");
+						
+						int dx = nextX - originalX;
+						int dy = nextY - originalY;
+												
+						String dir = "init";
+						
+						try {
+							dir = getCompassTable(Axis_simulator_com, 0, dx, dy, inXMPPSet);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+//						String dir = getCompassTable(Axis_simulator_com, 270, dx, dy);
+//						String dir = getCompassTable(UartReceive.tempInt[2], Axis_eComAngle_Array[0], dx, dy);
+						
+						if(RUN_THREAD){
+							Log.i("jamesdebug", "driectiontimeMode_change************:" + driectiontimeMode_change);
+							try {
+								Direction_times(driectiontimeMode_change, dir, inXMPPSet);
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
 					}
 					game.source[0] = nextX;
 					game.source[1] = nextY;
 				}
-//james				
-//				try {
-//					Thread.sleep(1000);
-//				} catch (InterruptedException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
 				
 				try {
 					Thread.sleep(300);
@@ -1632,13 +1662,12 @@ public class SendCmdToBoardAlgorithm {
 					e1.printStackTrace();
 				}
 				
-				Log.i("jamesdebug", "Robot start williamxxx");
 				// Clear Target bitmap 
 //				game.target[0] = -1;
 //				game.target[1] = -1;
 //				game.target[0] = 1;
 //				game.target[1] = 5;
-				Log.i("jamesdebug", "Robot start williamxxx2");
+				
 				// Set Source location to Target
 				// new start position
 //				game.source[0] = nextX;
@@ -1646,7 +1675,6 @@ public class SendCmdToBoardAlgorithm {
 				
 				// Redrawing source and target bitmap position
 				game.setPathFlag(false);
-				Log.i("jamesdebug", "Robot start williamxxx3");
 				// Clear path line  , when path running done.
 //				game.getSearchProcess().clear();
 				
@@ -1654,34 +1682,24 @@ public class SendCmdToBoardAlgorithm {
 //				gameView.drawCircleFlag = true;
 
 				gameView.postInvalidate();
-				Log.i("jamesdebug", "Robot start williamxxx4");
 			//}
 			
-//james				
-//			try {
-//				Thread.sleep(1000);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 				try {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			Log.i("jamesdebug", "Robot start williamxxx5");
-			Axis_RunDrawCircle_StopUpdate = false;
-			Log.i("jamesdebug", "Robot start williamxxx6");
+				
+				Axis_RunDrawCircle_StopUpdate = false;
 			
-			initIoc();
+				initIoc();
 			
-			game.suckccc();
-			Game.runAlgorithmEND = true;
-				}
-//		}				
+				game.suckccc();
+				Game.runAlgorithmEND = true;
 		}
 	}
+}
 	
 
 
@@ -1702,7 +1720,6 @@ public class SendCmdToBoardAlgorithm {
 ////					
 ////					//PathQueue[size - 1] == Start  . . .  PathQueue[0] == Target
 ////					pathQ = GameView.getPathQueue();
-////					Log.i("jamesdebug", "Robot start running222");
 ////					
 ////					try {
 ////						Thread.sleep(1000);
@@ -1716,7 +1733,6 @@ public class SendCmdToBoardAlgorithm {
 ////						} catch (Exception e) {
 ////							e.printStackTrace();
 ////						}
-////						Log.i("william", "Robot start running333");
 ////						gameView.drawCount = i;
 ////						gameView.postInvalidate();
 ////						try {
@@ -1772,7 +1788,6 @@ public class SendCmdToBoardAlgorithm {
 ////						//String dir = getCompassTable(UartReceive.tempInt[2], Axis_eComAngle_Array[0], dx, dy);
 ////						
 ////						
-////						Log.i("william", "Robot start running444");
 ////						Direction_times(9, dir, inXMPPSet);
 ////
 ////
@@ -1824,7 +1839,6 @@ public class SendCmdToBoardAlgorithm {
 //					
 //					//PathQueue[size - 1] == Start  . . .  PathQueue[0] == Target
 //					pathQ = GameView.getPathQueue();
-//					Log.i("jamesdebug", "Robot start running222");
 //					
 //					try {
 //						Thread.sleep(1000);
@@ -1838,7 +1852,6 @@ public class SendCmdToBoardAlgorithm {
 //						} catch (Exception e) {
 //							e.printStackTrace();
 //						}
-//						Log.i("william", "Robot start running333");
 //						gameView.drawCount = i;
 //						gameView.postInvalidate();
 //						try {
@@ -1894,7 +1907,6 @@ public class SendCmdToBoardAlgorithm {
 //						//String dir = getCompassTable(UartReceive.tempInt[2], Axis_eComAngle_Array[0], dx, dy);
 //						
 //						
-//						Log.i("william", "Robot start running444");
 //						Direction_times(9, dir, inXMPPSet);
 //
 //

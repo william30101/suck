@@ -40,7 +40,7 @@ public class Game {//�t��k���O
 	Game game;
 	private XMPPSetting XMPPSet;
 	public static boolean RUN_THREAD = true;
-	public static boolean runAlgorithmEND = false;
+	public static boolean runAlgorithmEND = true;
 	Runnable rRUN = new rRUNThread();
 	Runnable rNavi = new rNavigation();
 	SendCmdToBoardAlgorithm sendCmdToBoardAlgorithm;
@@ -336,7 +336,8 @@ public class Game {//�t��k���O
 	}
 	
 	public void suckccc() {
-		handler.postDelayed(rRUN, 2000);
+//		handler.postDelayed(rRUN, 2000);
+		handler.postDelayed(rRUN, 500);
 	}
 	
 	public class rNavigation implements Runnable {
@@ -348,49 +349,39 @@ public class Game {//�t��k���O
 	
 	public class rRUNThread implements Runnable {
 		public void run() {
-			Log.i("jamesdebug", "Robot start williamxxx9");
 
-//			if(source[0] != target[0] || source[1] != target[1]){
-			if(source[0] != finaltarget[0] || source[1] != finaltarget[1]){	
-//				if(count2 == 0){
-//					runAlgorithmEND = true;
-//					count2 ++;
-//				}
-				
+			if((source[0]-target[0] ==  0 && source[1]-target[1] ==  1)||
+					   (source[0]-target[0] == -1 && source[1]-target[1] ==  1)||
+					   (source[0]-target[0] == -1 && source[1]-target[1] ==  0)||
+					   (source[0]-target[0] == -1 && source[1]-target[1] == -1)||
+					   (source[0]-target[0] ==  0 && source[1]-target[1] == -1)||
+					   (source[0]-target[0] ==  1 && source[1]-target[1] == -1)||
+					   (source[0]-target[0] ==  1 && source[1]-target[1] ==  0)||
+					   (source[0]-target[0] ==  1 && source[1]-target[1] ==  1)){
+				SendCmdToBoardAlgorithm.driectiontimeMode_change = 2;
 				if(runAlgorithmEND == true){
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					Log.i("jamesdebug", "rRUNstart");
-					singleThreadExecutor.execute(rNavi);
-					
-
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-//					gameView.postInvalidate();
+					runAlgorithm();
+				}
+			}else if (source[0] == target[0] && source[1] == target[1]) {
+				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
+				if(runAlgorithmEND == true){
+					runAlgorithm();
+				}
+			}else {
+				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
+				if(runAlgorithmEND == true){
+					runAlgorithm();
 				}
 			}
-			
-//			handler.postDelayed(rRUN, 50000);
-//			handler.postDelayed(rRUN, 25000);
-			handler.postDelayed(rRUN, 5000);
-//			gameView.postInvalidate();
+			handler.postDelayed(rRUN, 10000);
 		}
-
 	}
 	
 	public class BFSThread extends Thread {
 		public void run() {
 			
 //			if (RUN_THREAD){
-				Log.i("jamesdebug", "============000000000000=================");
+				Log.i("jamesdebug", "============000000000000===============");
 				
 				  try {
 					Thread.sleep(1000);
@@ -398,11 +389,11 @@ public class Game {//�t��k���O
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				  
 //			      RUN_THREAD = false;
 //			      BFSThread.interrupted();
 				  //stopAlgorithm();
 //			      Log.i("jamesdebug", "============111=================");
-			      
 			      
 //				try {
 //					synchronized (gameView) {
@@ -475,10 +466,8 @@ public class Game {//�t��k���O
 				
 //				SendCmdToBoardAlgorithm.Axis_RunDrawCircle_StopUpdate = false;
 			
-						Log.i("william", "Robot start running555");
 						synchronized (SendAlgo) {
 							try {
-								Log.i("william", "Robot start running666");
 								SendAlgo.RobotStart(gameView, game, XMPPSet);
 							} catch (Exception e) {
 								e.printStackTrace();

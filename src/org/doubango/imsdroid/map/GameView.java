@@ -114,7 +114,7 @@ public class GameView extends View {
 		st = new ShowThread();
 
 		getScreenSize();
-		Log.i("shinhua", "GameView Constructor");
+//		Log.i("shinhua", "GameView Constructor");
 
 	}
 
@@ -189,7 +189,6 @@ public class GameView extends View {
 		// Log.i(TAG,"getting onMyDraw");
 		row = map.length;
 		col = map[0].length;
-		Log.i("jamesdebug", "Robot start williamxxx8");
 		
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
@@ -361,7 +360,7 @@ public class GameView extends View {
 				// Draw Grid position on canvas
 				gridX = pos[0];
 				gridY = pos[1];
-				Log.i("jamesdebug","touch target draw before");
+//				Log.i("jamesdebug","touch target draw before");
 				// Setting net Target postion
 			//	if (touchDown && pos[0] != -1 && pos[1] != -1) {
 				if ( pos[0] != -1 && pos[1] != -1) {
@@ -369,7 +368,7 @@ public class GameView extends View {
 					MapList.target[0][1] = pos[1];
 					MapList.target1[0][0] = pos[0];
 					MapList.target1[0][1] = pos[1];
-					Log.i("jamesdebug","touch target draw after");
+//					Log.i("jamesdebug","touch target draw after");
 					zoomout = true;
 				}
 
