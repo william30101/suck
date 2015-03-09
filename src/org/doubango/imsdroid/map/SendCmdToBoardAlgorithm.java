@@ -397,7 +397,7 @@ public class SendCmdToBoardAlgorithm {
 				
 				//test1
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -1568,7 +1568,7 @@ public class SendCmdToBoardAlgorithm {
 					
 					if(RUN_THREAD){
 						try {
-							Thread.sleep(300);
+							Thread.sleep(50);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -1656,7 +1656,7 @@ public class SendCmdToBoardAlgorithm {
 				}
 				
 				try {
-					Thread.sleep(300);
+					Thread.sleep(50);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -1685,7 +1685,7 @@ public class SendCmdToBoardAlgorithm {
 			//}
 			
 				try {
-					Thread.sleep(300);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

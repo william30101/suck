@@ -364,9 +364,9 @@ public class Game {//�t��k���O
 				}
 			}else if (source[0] == target[0] && source[1] == target[1]) {
 				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
-				if(runAlgorithmEND == true){
-					runAlgorithm();
-				}
+//				if(runAlgorithmEND == true){
+//					runAlgorithm();
+//				}
 			}else {
 				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
 				if(runAlgorithmEND == true){
