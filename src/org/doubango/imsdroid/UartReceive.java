@@ -20,7 +20,7 @@ import android.util.Log;
 public class UartReceive {
 	
 	private ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-	boolean debugNanoQueue = false , debugEncoderQueue = false;
+	boolean debugNanoQueue = true , debugEncoderQueue = false;
 
 	private int nanoCount = 0 , encoderCount = 0;  
 	private String nanoTestData[] = {

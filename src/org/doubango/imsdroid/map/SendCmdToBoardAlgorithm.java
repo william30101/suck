@@ -40,7 +40,7 @@ public class SendCmdToBoardAlgorithm {
 	public Game.BFSThread BFST;
 //	Button threadSTOP;
 	
-	public static int testangle = 50;
+	public static int testangle = 0;
 	public static Game game;
 	public XMPPSetting inXMPPSet;
 	public static GameView gameView;
@@ -395,16 +395,19 @@ public class SendCmdToBoardAlgorithm {
 			case 0:
 				retval = FindCompass_F( dx, dy );
 				
-				//test1
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+
 				
 //				if( UartReceive.tempInt[2] - Axis_InitialCompass > 30 ){
 				if( testangle > 30 ){
+					
+					//test1
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
 					for (int i = 0; i < 2; i++){
 	//					String xxx = "direction forleft";
 						String xxx = "direction left";
@@ -414,7 +417,7 @@ public class SendCmdToBoardAlgorithm {
 						
 						Log.i("jamesdebug", "************************left**********************");
 						try {
-							Thread.sleep(50);
+							Thread.sleep(100);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -422,21 +425,31 @@ public class SendCmdToBoardAlgorithm {
 					}
 //				}else if ( Axis_InitialCompass - UartReceive.tempInt[2] > 30 ){			
 				} else if (testangle == 0) {
-					for (int i = 0; i < 4; i++){
-	//					String yyy = "direction forRig";
-						String yyy = "direction forward";
-						String[] inM2 = yyy.split("\\s+");
-						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
-						UartCmd.SendMsgUart(1, cmdByte2);
-						
-						try {
-							Thread.sleep(50);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
+//					for (int i = 0; i < 4; i++){
+//	//					String yyy = "direction forRig";
+//						String yyy = "direction forward";
+//						String[] inM2 = yyy.split("\\s+");
+//						byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+//						UartCmd.SendMsgUart(1, cmdByte2);
+//						
+//						try {
+//							Thread.sleep(50);
+//						} catch (InterruptedException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+					break;
 				}else if (testangle < 30){
+					
+					//test1
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
 					for (int i = 0; i < 2; i++){
 	//					String yyy = "direction forRig";
 						String yyy = "direction right";
@@ -445,7 +458,7 @@ public class SendCmdToBoardAlgorithm {
 						UartCmd.SendMsgUart(1, cmdByte2);
 						
 						try {
-							Thread.sleep(50);
+							Thread.sleep(100);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -847,50 +860,50 @@ public class SendCmdToBoardAlgorithm {
 		if (dx == 0 && dy == 1) {
 			
 			Axis_SendeComAngle_to32_F = "direction forward";
-//			Axis_simulator_com = 0;
+			Axis_simulator_com = 0;
 //			Axis_simulator_com = Axis_eComAngle_Array[0];
 			Axis_simulator_com = Axis_InitialCompass;
 			
 		} else if (dx == -1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle P 45";
-//			Axis_simulator_com = 45;
-			Axis_simulator_com = Axis_eComAngle_Array[1];
+			Axis_simulator_com = 45;
+//			Axis_simulator_com = Axis_eComAngle_Array[1];
 			
 		} else if (dx == -1 && dy == 0)  {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle P 90";
-//			Axis_simulator_com = 90;
-			Axis_simulator_com = Axis_eComAngle_Array[2];
+			Axis_simulator_com = 90;
+//			Axis_simulator_com = Axis_eComAngle_Array[2];
 			
 		} else if (dx == -1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle P 135";
-//			Axis_simulator_com = 135;
-			Axis_simulator_com = Axis_eComAngle_Array[3];
+			Axis_simulator_com = 135;
+//			Axis_simulator_com = Axis_eComAngle_Array[3];
 			
 		} else if (dx == 0 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle P 180";
-//			Axis_simulator_com = 180;
-			Axis_simulator_com = Axis_eComAngle_Array[4];
+			Axis_simulator_com = 180;
+//			Axis_simulator_com = Axis_eComAngle_Array[4];
 			
 		} else if (dx == 1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle N 135";
-//			Axis_simulator_com = 225;
-			Axis_simulator_com = Axis_eComAngle_Array[5];
+			Axis_simulator_com = 225;
+//			Axis_simulator_com = Axis_eComAngle_Array[5];
 			
 		} else if (dx == 1 && dy == 0)   {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle N 90";
-//			Axis_simulator_com = 270;
-			Axis_simulator_com = Axis_eComAngle_Array[6];
+			Axis_simulator_com = 270;
+//			Axis_simulator_com = Axis_eComAngle_Array[6];
 		} else if (dx == 1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_F = "RotateAngle N 45";
-//			Axis_simulator_com = 315;
-			Axis_simulator_com = Axis_eComAngle_Array[7];
+			Axis_simulator_com = 315;
+//			Axis_simulator_com = Axis_eComAngle_Array[7];
 			
 		}
 
@@ -1065,51 +1078,51 @@ public class SendCmdToBoardAlgorithm {
 	{
 		if (dx == 0 && dy == 1) {
 			
-			Axis_SendeComAngle_to32_B = "RotateAngle N 180";
-//			Axis_simulator_com = 0;
-			Axis_simulator_com = Axis_eComAngle_Array[0];
+			Axis_SendeComAngle_to32_B = "RotateAngle P 180";
+			Axis_simulator_com = 0;
+//			Axis_simulator_com = Axis_eComAngle_Array[0];
 			
 		} else if (dx == -1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle N 135";
-//			Axis_simulator_com = 45;
-			Axis_simulator_com = Axis_eComAngle_Array[1];
+			Axis_simulator_com = 45;
+//			Axis_simulator_com = Axis_eComAngle_Array[1];
 			
 		} else if (dx == -1 && dy == 0)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle N 90";
-//			Axis_simulator_com = 90;
-			Axis_simulator_com = Axis_eComAngle_Array[2];
+			Axis_simulator_com = 90;
+//			Axis_simulator_com = Axis_eComAngle_Array[2];
 			
 		} else if (dx == -1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle N 45";
-//			Axis_simulator_com = 135;
-			Axis_simulator_com = Axis_eComAngle_Array[3];
+			Axis_simulator_com = 135;
+//			Axis_simulator_com = Axis_eComAngle_Array[3];
 			
 		} else if (dx == 0 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_B = "direction forward";
-//			Axis_simulator_com = 180;
-			Axis_simulator_com = Axis_eComAngle_Array[4];
+			Axis_simulator_com = 180;
+//			Axis_simulator_com = Axis_eComAngle_Array[4];
 			
 		} else if (dx == 1 && dy == -1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 45";
-//			Axis_simulator_com = 225;
-			Axis_simulator_com = Axis_eComAngle_Array[5];
+			Axis_simulator_com = 225;
+//			Axis_simulator_com = Axis_eComAngle_Array[5];
 			
 		} else if (dx == 1 && dy == 0)   {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 90";
-//			Axis_simulator_com = 270;
-			Axis_simulator_com = Axis_eComAngle_Array[6];
+			Axis_simulator_com = 270;
+//			Axis_simulator_com = Axis_eComAngle_Array[6];
 			
 		} else if (dx == 1 && dy == 1)  {
 			
 			Axis_SendeComAngle_to32_B = "RotateAngle P 135";
-//			Axis_simulator_com = 315;
-			Axis_simulator_com = Axis_eComAngle_Array[7];
+			Axis_simulator_com = 315;
+//			Axis_simulator_com = Axis_eComAngle_Array[7];
 			
 		}
 
@@ -1506,11 +1519,13 @@ public class SendCmdToBoardAlgorithm {
 //				}
 //			}
 			
-			try {	
-				Thread.sleep(200);	
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+
+//remove
+//			try {	
+//				Thread.sleep(200);	
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 			
 			for( int i = 0; i < times; i++ )
 			{
@@ -1550,7 +1565,7 @@ public class SendCmdToBoardAlgorithm {
 					e.printStackTrace();
 				}
 			}
-			
+
 			try {
 				
 				Thread.sleep(100);
@@ -1588,8 +1603,8 @@ public class SendCmdToBoardAlgorithm {
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
-						gameView.drawCount = i;
-						gameView.postInvalidate();
+//						gameView.drawCount = i;
+//						gameView.postInvalidate();
 						try {
 							Thread.sleep(50);
 						} catch (Exception e) {
@@ -1710,7 +1725,6 @@ public class SendCmdToBoardAlgorithm {
 				Axis_RunDrawCircle_StopUpdate = false;
 			
 				initIoc();
-			
 				game.suckccc();
 				Game.runAlgorithmEND = true;
 		}

@@ -1,4 +1,5 @@
 package org.doubango.imsdroid.map;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +25,7 @@ import android.util.Log;
 import android.widget.Button;//�ޤJ�������O
 import android.widget.TextView;//�ޤJ�������O
 public class Game {//�t��k���O
+	public static UartCmd uartCmd = UartCmd.getInstance();
 	public int algorithmId=0;//�t��k�N�� 0--�`���u��
 	int mapId = 0;//�a�Ͻs��
 	static int[][] map;// = MapList.customized_map2[mapId];
@@ -347,6 +349,78 @@ public class Game {//�t��k���O
 		}
 	}
 	
+	public void fixcompass() throws IOException{
+		if( SendCmdToBoardAlgorithm.testangle > 30 ){
+			
+			//test1
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			for (int i = 0; i < 2; i++){
+//					String xxx = "direction forleft";
+				String xxx = "direction left";
+				String[] inM2 = xxx.split("\\s+");
+				byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+				UartCmd.SendMsgUart(1, cmdByte2);
+				
+				Log.i("jamesdebug", "************************left**********************");
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			
+//		}else if ( Axis_InitialCompass - UartReceive.tempInt[2] > 30 ){			
+		} else if (SendCmdToBoardAlgorithm.testangle == 0) {
+//			for (int i = 0; i < 4; i++){
+////					String yyy = "direction forRig";
+//				String yyy = "direction forward";
+//				String[] inM2 = yyy.split("\\s+");
+//				byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+//				UartCmd.SendMsgUart(1, cmdByte2);
+//				
+//				try {
+//					Thread.sleep(50);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+			
+		}else if (SendCmdToBoardAlgorithm.testangle < 30){
+			
+			//test1
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			for (int i = 0; i < 2; i++){
+//					String yyy = "direction forRig";
+				String yyy = "direction right";
+				String[] inM2 = yyy.split("\\s+");
+				byte[] cmdByte2 = uartCmd.GetAllByte(inM2);
+				UartCmd.SendMsgUart(1, cmdByte2);
+				
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
 	public class rRUNThread implements Runnable {
 		public void run() {
 
@@ -367,6 +441,12 @@ public class Game {//�t��k���O
 				SendCmdToBoardAlgorithm.driectiontimeMode_change = 4;
 //				if(runAlgorithmEND == true){
 //					runAlgorithm();
+				try {
+					fixcompass();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 //				}
 			}else {
 //				SendCmdToBoardAlgorithm.driectiontimeMode_change = 9;
