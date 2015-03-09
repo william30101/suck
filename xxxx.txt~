@@ -1,0 +1,507 @@
+:16.513 I/william ( 4112): Enter BLEDeviceScanActivity
+02-13 04:47:16.513 D/BluetoothAdapter( 4112): startLeScan(): null
+02-13 04:47:16.523 D/BtGatt.GattService( 2985): registerClient() - UUID=e6fd13a5-2517-44c0-aed6-1ea3111ece10
+02-13 04:47:16.523 D/BtGatt.btif( 2985): btif_gattc_register_app
+02-13 04:47:16.523 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1000
+02-13 04:47:16.523 D/BtGatt.btif( 2985): btif_gattc_upstreams_evt: Event 0
+02-13 04:47:16.523 D/BtGatt.GattService( 2985): onClientRegistered() - UUID=e6fd13a5-2517-44c0-aed6-1ea3111ece10, clientIf=4
+02-13 04:47:16.523 D/BluetoothAdapter( 4112): onClientRegistered() - status=0 clientIf=4
+02-13 04:47:16.523 D/BtGatt.GattService( 2985): startScan() - queue=0
+02-13 04:47:16.523 D/BtGatt.GattService( 2985): startScan() - adding client=4
+02-13 04:47:16.523 D/BtGatt.btif( 2985): btif_gattc_scan
+02-13 04:47:16.523 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1002
+02-13 04:47:16.523 I/ble     ( 4112): scanLeDeviceStart = true
+02-13 04:47:16.523 D/BluetoothAdapter( 4112): startLeScan(): null
+02-13 04:47:16.523 E/BluetoothAdapter( 4112): LE Scan has already started
+02-13 04:47:16.523 I/william ( 4112):  BLE connect = false
+02-13 04:47:16.523 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.523 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.523 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.523 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.523 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.523 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.523 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.523 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.533 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.533 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.533 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.533 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.533 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.533 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.533 I/shinhua ( 4112): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:47:16.533 I/shinhua ( 4112): onMeasure size: 225
+02-13 04:47:16.533 I/shinhua ( 4112): ArcLayout onLayout(boolean changed, int l, int t, int r, int b)
+02-13 04:47:16.533 I/shinhua ( 4112): centerX: 112 centerY: 112 gw: 225 gh: 225
+02-13 04:47:17.583 I/jamesdebug( 4112): source =1 1 1 1
+02-13 04:47:18.603 I/william ( 4112): Robot start running555
+02-13 04:47:18.603 I/william ( 4112): Robot start running666
+02-13 04:47:18.603 I/william ( 4112): Robot start running
+02-13 04:47:18.613 I/william ( 4112): Robot start running222
+02-13 04:47:18.643 I/jamesdebug( 4112): Draw target = 9 , 8
+02-13 04:47:18.643 I/william ( 4112): drawcircleflag = true
+02-13 04:47:18.643 I/william ( 4112): Draw Circle X , Y ( 6 3 )
+02-13 04:47:19.603 I/shinhua1( 4112): level -52
+02-13 04:47:19.673 I/shinhua1( 4112): level -52
+02-13 04:47:20.563 W/audio_hw_primary( 2363): do_out_standby... 1074145152
+02-13 04:47:21.383 I/shinhua1( 4112): level -52
+02-13 04:47:21.483 I/shinhua1( 4112): level -52
+02-13 04:47:22.383 I/william ( 4112):  BLE connect = false
+02-13 04:47:22.383 I/shinhua1( 4112): connectStatus BLE disconnected
+02-13 04:47:23.383 I/william ( 4112):  BLE connect = false
+02-13 04:47:23.383 I/shinhua1( 4112): connectStatus BLE disconnected
+02-13 04:47:24.603 I/shinhua1( 4112): level -51
+02-13 04:47:24.673 I/shinhua1( 4112): level -51
+02-13 04:47:26.383 I/shinhua1( 4112): level -51
+02-13 04:47:26.413 D/BluetoothAdapter( 4112): stopLeScan()
+02-13 04:47:26.413 D/BtGatt.GattService( 2985): stopScan() - queue=1
+02-13 04:47:26.413 D/BtGatt.GattService( 2985): stopScan() - queue empty; stopping scan
+02-13 04:47:26.413 D/BtGatt.btif( 2985): btif_gattc_scan
+02-13 04:47:26.413 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1003
+02-13 04:47:26.413 D/BtGatt.GattService( 2985): unregisterClient() - clientIf=4
+02-13 04:47:26.413 D/BtGatt.btif( 2985): btif_gattc_unregister_app
+02-13 04:47:26.413 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1001
+02-13 04:47:26.413 D/BtGatt.btif( 2985): btif_gattc_upstreams_evt: Event 1
+02-13 04:47:26.483 I/shinhua1( 4112): level -51
+02-13 04:47:26.513 D/BluetoothAdapter( 4112): stopLeScan()
+02-13 04:47:29.603 I/shinhua1( 4112): level -50
+02-13 04:47:29.673 I/shinhua1( 4112): level -50
+02-13 04:47:31.383 I/shinhua1( 4112): level -50
+02-13 04:47:31.483 I/shinhua1( 4112): level -50
+02-13 04:47:34.603 I/shinhua1( 4112): level -50
+02-13 04:47:34.673 I/shinhua1( 4112): level -50
+02-13 04:47:36.383 I/shinhua1( 4112): level -48
+02-13 04:47:36.483 I/shinhua1( 4112): level -48
+02-13 04:47:39.603 I/shinhua1( 4112): level -48
+02-13 04:47:39.673 I/shinhua1( 4112): level -48
+02-13 04:47:41.383 I/shinhua1( 4112): level -48
+02-13 04:47:41.483 I/shinhua1( 4112): level -48
+02-13 04:47:44.603 I/shinhua1( 4112): level -50
+02-13 04:47:44.673 I/shinhua1( 4112): level -50
+02-13 04:47:46.383 I/shinhua1( 4112): level -50
+02-13 04:47:46.483 I/shinhua1( 4112): level -50
+02-13 04:47:49.603 I/shinhua1( 4112): level -51
+02-13 04:47:49.673 I/shinhua1( 4112): level -51
+02-13 04:47:51.383 I/shinhua1( 4112): level -51
+02-13 04:47:51.483 I/shinhua1( 4112): level -51
+02-13 04:47:54.603 I/shinhua1( 4112): level -52
+02-13 04:47:54.673 I/shinhua1( 4112): level -52
+02-13 04:47:56.383 I/shinhua1( 4112): level -52
+02-13 04:47:56.483 I/shinhua1( 4112): level -52
+02-13 04:47:59.603 I/shinhua1( 4112): level -53
+02-13 04:47:59.673 I/shinhua1( 4112): level -53
+02-13 04:48:01.383 I/shinhua1( 4112): level -53
+02-13 04:48:01.483 I/shinhua1( 4112): level -53
+02-13 04:48:04.603 I/shinhua1( 4112): level -53
+02-13 04:48:04.673 I/shinhua1( 4112): level -53
+02-13 04:48:06.383 I/shinhua1( 4112): level -50
+02-13 04:48:06.483 I/shinhua1( 4112): level -50
+02-13 04:48:09.603 I/shinhua1( 4112): level -49
+02-13 04:48:09.673 I/shinhua1( 4112): level -49
+02-13 04:48:11.383 I/shinhua1( 4112): level -49
+02-13 04:48:11.483 I/shinhua1( 4112): level -49
+02-13 04:48:14.603 I/shinhua1( 4112): level -49
+02-13 04:48:14.673 I/shinhua1( 4112): level -49
+02-13 04:48:16.383 I/shinhua1( 4112): level -49
+02-13 04:48:16.483 I/shinhua1( 4112): level -49
+02-13 04:48:19.603 I/shinhua1( 4112): level -49
+02-13 04:48:19.673 I/shinhua1( 4112): level -49
+02-13 04:48:21.383 I/shinhua1( 4112): level -49
+02-13 04:48:21.483 I/shinhua1( 4112): level -49
+02-13 04:48:24.603 I/shinhua1( 4112): level -50
+02-13 04:48:24.673 I/shinhua1( 4112): level -50
+02-13 04:48:26.383 I/shinhua1( 4112): level -50
+02-13 04:48:26.483 I/shinhua1( 4112): level -50
+02-13 04:48:29.603 I/shinhua1( 4112): level -52
+02-13 04:48:29.673 I/shinhua1( 4112): level -53
+02-13 04:48:31.383 I/shinhua1( 4112): level -53
+02-13 04:48:31.483 I/shinhua1( 4112): level -53
+02-13 04:48:34.603 I/shinhua1( 4112): level -53
+02-13 04:48:34.673 I/shinhua1( 4112): level -53
+02-13 04:48:36.383 I/shinhua1( 4112): level -51
+02-13 04:48:36.483 I/shinhua1( 4112): level -51
+02-13 04:48:39.603 I/shinhua1( 4112): level -53
+02-13 04:48:39.673 I/shinhua1( 4112): level -53
+02-13 04:48:41.383 I/shinhua1( 4112): level -53
+02-13 04:48:41.483 I/shinhua1( 4112): level -53
+02-13 04:48:44.603 I/shinhua1( 4112): level -54
+02-13 04:48:44.673 I/shinhua1( 4112): level -56
+02-13 04:48:46.383 I/shinhua1( 4112): level -56
+02-13 04:48:46.483 I/shinhua1( 4112): level -56
+02-13 04:48:49.603 I/shinhua1( 4112): level -59
+02-13 04:48:49.673 I/shinhua1( 4112): level -59
+02-13 04:48:51.383 I/shinhua1( 4112): level -59
+02-13 04:48:51.483 I/shinhua1( 4112): level -59
+02-13 04:48:54.603 I/shinhua1( 4112): level -58
+02-13 04:48:54.673 I/shinhua1( 4112): level -58
+02-13 04:48:56.383 I/shinhua1( 4112): level -58
+02-13 04:48:56.483 I/shinhua1( 4112): level -58
+02-13 04:48:59.603 I/shinhua1( 4112): level -57
+02-13 04:48:59.673 I/shinhua1( 4112): level -57
+02-13 04:49:01.383 I/shinhua1( 4112): level -57
+02-13 04:49:01.483 I/shinhua1( 4112): level -57
+02-13 04:49:04.603 I/shinhua1( 4112): level -57
+02-13 04:49:04.673 I/shinhua1( 4112): level -57
+02-13 04:49:06.383 I/shinhua1( 4112): level -57
+02-13 04:49:06.483 I/shinhua1( 4112): level -57
+02-13 04:49:09.603 I/shinhua1( 4112): level -56
+02-13 04:49:09.673 I/shinhua1( 4112): level -56
+02-13 04:49:11.383 I/shinhua1( 4112): level -56
+02-13 04:49:11.483 I/shinhua1( 4112): level -56
+02-13 04:49:14.603 I/shinhua1( 4112): level -62
+02-13 04:49:14.673 I/shinhua1( 4112): level -62
+02-13 04:49:16.383 I/shinhua1( 4112): level -60
+02-13 04:49:16.483 I/shinhua1( 4112): level -60
+02-13 04:49:19.603 I/shinhua1( 4112): level -55
+02-13 04:49:19.673 I/shinhua1( 4112): level -55
+02-13 04:49:21.383 I/shinhua1( 4112): level -54
+02-13 04:49:21.483 I/shinhua1( 4112): level -54
+02-13 04:49:24.393 E/GpsXtraDownloader( 2649): No XTRA servers were specified in the GPS configuration
+02-13 04:49:24.603 I/shinhua1( 4112): level -55
+02-13 04:49:24.673 I/shinhua1( 4112): level -55
+02-13 04:49:26.383 I/shinhua1( 4112): level -55
+02-13 04:49:26.483 I/shinhua1( 4112): level -55
+02-13 04:49:29.603 I/shinhua1( 4112): level -57
+02-13 04:49:29.673 I/shinhua1( 4112): level -57
+02-13 04:49:31.383 I/shinhua1( 4112): level -55
+02-13 04:49:31.483 I/shinhua1( 4112): level -55
+02-13 04:49:34.603 I/shinhua1( 4112): level -56
+02-13 04:49:34.673 I/shinhua1( 4112): level -56
+02-13 04:49:36.383 I/shinhua1( 4112): level -55
+02-13 04:49:36.483 I/shinhua1( 4112): level -55
+02-13 04:49:39.603 I/shinhua1( 4112): level -52
+02-13 04:49:39.673 I/shinhua1( 4112): level -52
+02-13 04:49:41.383 I/shinhua1( 4112): level -52
+02-13 04:49:41.483 I/shinhua1( 4112): level -52
+02-13 04:49:44.603 I/shinhua1( 4112): level -49
+02-13 04:49:44.673 I/shinhua1( 4112): level -49
+02-13 04:49:46.383 I/shinhua1( 4112): level -50
+02-13 04:49:46.483 I/shinhua1( 4112): level -50
+02-13 04:49:49.603 I/shinhua1( 4112): level -51
+02-13 04:49:49.673 I/shinhua1( 4112): level -51
+02-13 04:49:51.383 I/shinhua1( 4112): level -52
+02-13 04:49:51.483 I/shinhua1( 4112): level -52
+02-13 04:49:51.853 D/dalvikvm( 2734): GC_FOR_ALLOC freed 372K, 57% free 4995K/11524K, paused 38ms, total 42ms
+02-13 04:49:54.603 I/shinhua1( 4112): level -56
+02-13 04:49:54.673 I/shinhua1( 4112): level -56
+02-13 04:49:56.383 I/shinhua1( 4112): level -56
+02-13 04:49:56.483 I/shinhua1( 4112): level -56
+02-13 04:49:59.603 I/shinhua1( 4112): level -56
+02-13 04:49:59.673 I/shinhua1( 4112): level -56
+02-13 04:50:01.383 I/shinhua1( 4112): level -56
+02-13 04:50:01.483 I/shinhua1( 4112): level -56
+02-13 04:50:04.603 I/shinhua1( 4112): level -57
+02-13 04:50:04.673 I/shinhua1( 4112): level -57
+02-13 04:50:06.383 I/shinhua1( 4112): level -57
+02-13 04:50:06.483 I/shinhua1( 4112): level -57
+02-13 04:50:08.143 D/AndroidRuntime( 4175): 
+02-13 04:50:08.143 D/AndroidRuntime( 4175): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+02-13 04:50:08.143 D/AndroidRuntime( 4175): CheckJNI is ON
+02-13 04:50:08.143 I/AndroidRuntime( 4175): JNI options: '-Xjniopts:warnonly'
+02-13 04:50:08.163 D/dalvikvm( 4175): Trying to load lib libjavacore.so 0x0
+02-13 04:50:08.163 D/dalvikvm( 4175): Added shared lib libjavacore.so 0x0
+02-13 04:50:08.173 D/dalvikvm( 4175): Trying to load lib libnativehelper.so 0x0
+02-13 04:50:08.173 D/dalvikvm( 4175): Added shared lib libnativehelper.so 0x0
+02-13 04:50:08.343 D/AndroidRuntime( 4175): Calling main entry com.android.commands.pm.Pm
+02-13 04:50:08.353 W/ActivityManager( 2649): No content provider found for permission revoke: file:///data/local/tmp/UI.apk
+02-13 04:50:08.493 W/ActivityManager( 2649): No content provider found for permission revoke: file:///data/local/tmp/UI.apk
+02-13 04:50:08.493 I/PackageManager( 2649): Copying native libraries to /data/app-lib/vmdl1056771243
+02-13 04:50:08.893 W/PackageParser( 2649): No actions in intent filter at /data/app/vmdl1056771243.tmp Binary XML file line #50
+02-13 04:50:08.943 D/dalvikvm( 2649): GC_FOR_ALLOC freed 736K, 25% free 5711K/7524K, paused 34ms, total 34ms
+02-13 04:50:09.043 D/dalvikvm( 2649): GC_FOR_ALLOC freed 532K, 21% free 5979K/7524K, paused 35ms, total 35ms
+02-13 04:50:09.123 D/dalvikvm( 2649): GC_FOR_ALLOC freed 850K, 21% free 5998K/7524K, paused 35ms, total 35ms
+02-13 04:50:09.233 D/dalvikvm( 2649): GC_FOR_ALLOC freed 874K, 21% free 5997K/7524K, paused 48ms, total 48ms
+02-13 04:50:09.323 D/dalvikvm( 2649): GC_FOR_ALLOC freed 864K, 21% free 6005K/7524K, paused 36ms, total 36ms
+02-13 04:50:09.603 I/shinhua1( 4112): level -56
+02-13 04:50:09.673 I/shinhua1( 4112): level -56
+02-13 04:50:10.693 I/ActivityManager( 2649): Force stopping package org.doubango.imsdroid appid=10044 user=-1
+02-13 04:50:10.693 I/ActivityManager( 2649): Killing proc 4112:org.doubango.imsdroid/u0a10044: force stop org.doubango.imsdroid
+02-13 04:50:10.693 W/ActivityManager( 2649): Scheduling restart of crashed service org.doubango.imsdroid/.NativeService in 5000ms
+02-13 04:50:10.693 W/ActivityManager( 2649): Force removing ActivityRecord{41b4ffd0 u0 org.doubango.imsdroid/.Main}: app died, no saved state
+02-13 04:50:10.703 I/ActivityManager( 2649):   Force stopping service ServiceRecord{41cb66d8 u0 org.doubango.imsdroid/.NativeService}
+02-13 04:50:10.713 I/WindowState( 2649): WIN DEATH: Window{41c61128 u0 org.doubango.imsdroid/org.doubango.imsdroid.Main}
+02-13 04:50:13.363 D/        ( 2649): AccelSensor enable 0 ,usercount 0, handle 0 ,mEnabled 0
+02-13 04:50:13.363 I/PackageManager( 2649): Package org.doubango.imsdroid codePath changed from /data/app/org.doubango.imsdroid-1.apk to /data/app/org.doubango.imsdroid-2.apk; Retaining data and using new
+02-13 04:50:13.403 E/BufferQueue( 2360): [com.android.launcher/com.android.launcher2.Launcher] dequeueBuffer: can't dequeue multiple buffers without setting the buffer count
+02-13 04:50:13.413 W/InputMethodManagerService( 2649): Got RemoteException sending setActive(false) notification to pid 4112 uid 10044
+02-13 04:50:13.773 I/PackageManager( 2649): Running dexopt on: org.doubango.imsdroid
+02-13 04:50:14.643 D/dalvikvm( 4186): DexOpt: load 71ms, verify+opt 599ms, 1834652 bytes
+02-13 04:50:15.793 W/PackageManager( 2649): Code path for pkg : org.doubango.imsdroid changing from /data/app/org.doubango.imsdroid-1.apk to /data/app/org.doubango.imsdroid-2.apk
+02-13 04:50:15.793 I/ActivityManager( 2649): Force stopping package org.doubango.imsdroid appid=10044 user=-1
+02-13 04:50:15.793 W/PackageManager( 2649): Resource path for pkg : org.doubango.imsdroid changing from /data/app/org.doubango.imsdroid-1.apk to /data/app/org.doubango.imsdroid-2.apk
+02-13 04:50:15.883 W/PackageManager( 2649): Unknown permission android.permission.RAISED_THREAD_PRIORITY in package org.doubango.imsdroid
+02-13 04:50:16.123 I/ActivityManager( 2649): Force stopping package org.doubango.imsdroid appid=10044 user=0
+02-13 04:50:16.143 D/dalvikvm( 2734): GC_EXPLICIT freed 392K, 60% free 4662K/11524K, paused 2ms+2ms, total 26ms
+02-13 04:50:16.163 D/dalvikvm( 2863): GC_EXPLICIT freed 964K, 15% free 6204K/7232K, paused 2ms+5ms, total 33ms
+02-13 04:50:16.163 D/dalvikvm( 2793): GC_EXPLICIT freed 154K, 12% free 2861K/3244K, paused 2ms+2ms, total 24ms
+02-13 04:50:16.163 D/dalvikvm( 2649): GC_EXPLICIT freed 710K, 21% free 5987K/7524K, paused 2ms+8ms, total 48ms
+02-13 04:50:16.183 I/InputReader( 2649): Reconfiguring input devices.  changes=0x00000010
+02-13 04:50:16.183 D/BackupManagerService( 2649): Received broadcast Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:org.doubango.imsdroid flg=0x8000010 (has extras) }
+02-13 04:50:16.193 I/InputReader( 2649): Reconfiguring input devices.  changes=0x00000010
+02-13 04:50:16.193 D/BackupManagerService( 2649): Received broadcast Intent { act=android.intent.action.PACKAGE_ADDED dat=package:org.doubango.imsdroid flg=0x8000010 (has extras) }
+02-13 04:50:16.193 V/BackupManagerService( 2649): removePackageParticipantsLocked: uid=10044 #1
+02-13 04:50:16.193 V/BackupManagerService( 2649): addPackageParticipantsLocked: #1
+02-13 04:50:16.203 W/ContextImpl( 3458): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1385 android.content.ContextWrapper.startService:473 android.content.ContextWrapper.startService:473 com.android.keychain.KeyChainBroadcastReceiver.onReceive:12 android.app.ActivityThread.handleReceiver:2424 
+02-13 04:50:16.213 W/ResourceType( 2649): Failure getting entry for 0x7f060000 (t=5 e=0) in package 0 (error -75)
+02-13 04:50:16.253 W/RecognitionManagerService( 2649): no available voice recognition services found for user 0
+02-13 04:50:16.273 D/dalvikvm( 2649): GC_EXPLICIT freed 675K, 26% free 5605K/7524K, paused 3ms+5ms, total 71ms
+02-13 04:50:16.293 D/AndroidRuntime( 4175): Shutting down VM
+02-13 04:50:16.293 D/jdwp    ( 4175): Got wake-up signal, bailing out of select
+02-13 04:50:16.293 D/dalvikvm( 4175): Debugger has detached; object registry had 1 entries
+02-13 04:50:16.883 D/AndroidRuntime( 4196): 
+02-13 04:50:16.883 D/AndroidRuntime( 4196): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+02-13 04:50:16.883 D/AndroidRuntime( 4196): CheckJNI is ON
+02-13 04:50:16.883 I/AndroidRuntime( 4196): JNI options: '-Xjniopts:warnonly'
+02-13 04:50:16.893 D/dalvikvm( 4196): Trying to load lib libjavacore.so 0x0
+02-13 04:50:16.893 D/dalvikvm( 4196): Added shared lib libjavacore.so 0x0
+02-13 04:50:16.903 D/dalvikvm( 4196): Trying to load lib libnativehelper.so 0x0
+02-13 04:50:16.903 D/dalvikvm( 4196): Added shared lib libnativehelper.so 0x0
+02-13 04:50:17.063 D/AndroidRuntime( 4196): Calling main entry com.android.commands.am.Am
+02-13 04:50:17.063 D/dalvikvm( 4196): Note: class Landroid/app/ActivityManagerNative; has 163 unimplemented (abstract) methods
+02-13 04:50:17.073 I/ActivityManager( 2649): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=org.doubango.imsdroid/.Main} from pid 4196
+02-13 04:50:17.083 E/BufferQueue( 2649): [ScreenshotClient] dequeueBuffer: can't dequeue multiple buffers without setting the buffer count
+02-13 04:50:17.093 D/AndroidRuntime( 4196): Shutting down VM
+02-13 04:50:17.093 D/jdwp    ( 4196): Got wake-up signal, bailing out of select
+02-13 04:50:17.093 D/dalvikvm( 4196): Debugger has detached; object registry had 1 entries
+02-13 04:50:17.103 D/dalvikvm( 4207): Not late-enabling CheckJNI (already on)
+02-13 04:50:17.103 I/ActivityManager( 2649): Start proc org.doubango.imsdroid for activity org.doubango.imsdroid/.Main: pid=4207 uid=10044 gids={50044, 3002, 3001, 3003, 1015, 1006, 1028}
+02-13 04:50:17.123 I/dalvikvm( 4207): Turning on JNI app bug workarounds for target SDK version 11...
+02-13 04:50:17.133 D/        ( 2649): AccelSensor enable 1 ,usercount 1, handle 0 ,mEnabled 1
+02-13 04:50:17.153 D/org.doubango.imsdroid.IMSDroid( 4207): IMSDroid()
+02-13 04:50:17.153 D/org.doubango.ngn.NgnApplication( 4207): Build.MODEL=sabresd-mx6dq
+02-13 04:50:17.153 D/org.doubango.ngn.NgnApplication( 4207): Build.VERSION.SDK=18
+02-13 04:50:17.163 D/dalvikvm( 4207): Trying to load lib /data/data/org.doubango.imsdroid/lib/libutils_armv5te.so 0x419a9f20
+02-13 04:50:17.163 D/dalvikvm( 4207): Added shared lib /data/data/org.doubango.imsdroid/lib/libutils_armv5te.so 0x419a9f20
+02-13 04:50:17.163 D/dalvikvm( 4207): No JNI_OnLoad found in /data/data/org.doubango.imsdroid/lib/libutils_armv5te.so 0x419a9f20, skipping init
+02-13 04:50:17.163 D/org.doubango.ngn.NgnEngine( 4207): CPU_Feature=15
+02-13 04:50:17.163 D/org.doubango.ngn.NgnEngine( 4207): isCpuNeon()=YES
+02-13 04:50:17.163 D/dalvikvm( 4207): Trying to load lib /data/data/org.doubango.imsdroid/lib/libtinyWRAP_neon.so 0x419a9f20
+02-13 04:50:17.173 D/dalvikvm( 4207): Added shared lib /data/data/org.doubango.imsdroid/lib/libtinyWRAP_neon.so 0x419a9f20
+02-13 04:50:17.173 D/dalvikvm( 4207): No JNI_OnLoad found in /data/data/org.doubango.imsdroid/lib/libtinyWRAP_neon.so 0x419a9f20, skipping init
+02-13 04:50:17.183 D/org.doubango.ngn.NgnApplication( 4207): sGlEsVersion=131072
+02-13 04:50:17.203 D/org.doubango.ngn.NgnEngine( 4207): Configure AEC[true/200] AEC_TAIL_ADAPT[true] NoiseSuppression[true], Voice activity detection[false]
+02-13 04:50:17.223 I/ActivityManager( 2649): START u0 {cmp=org.doubango.imsdroid/.Screens.ScreenSplash} from pid 4207
+02-13 04:50:17.233 D/        ( 2649): AccelSensor enable 0 ,usercount 0, handle 0 ,mEnabled 0
+02-13 04:50:17.283 D/org.doubango.imsdroid.Screens.ScreenSplash( 4207): Starts the engine from the splash screen
+02-13 04:50:17.293 D/org.doubango.ngn.services.impl.NgnConfigurationService( 4207): starting...
+02-13 04:50:17.293 D/org.doubango.ngn.services.impl.NgnStorageService( 4207): starting...
+02-13 04:50:17.293 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): Starting...
+02-13 04:50:17.303 D/org.doubango.ngn.services.impl.NgnHttpClientService( 4207): Starting...
+02-13 04:50:17.313 D/org.doubango.ngn.services.impl.NgnHistoryService( 4207): Starting...
+02-13 04:50:17.313 D/org.doubango.ngn.services.impl.NgnContactService( 4207): starting...
+02-13 04:50:17.313 D/org.doubango.ngn.services.impl.NgnContactService( 4207): Observer Looper enter()
+02-13 04:50:17.313 D/org.doubango.ngn.services.impl.NgnSipService( 4207): starting...
+02-13 04:50:17.313 D/org.doubango.ngn.services.impl.NgnSoundService( 4207): starting...
+02-13 04:50:17.313 D/org.doubango.ngn.services.impl.NgnHistoryService( 4207): Loading history
+02-13 04:50:17.313 I/dalvikvm( 4207): Could not find method javax.xml.stream.XMLInputFactory.newInstance, referenced from method org.simpleframework.xml.stream.StreamProvider.<init>
+02-13 04:50:17.313 W/dalvikvm( 4207): VFY: unable to resolve static method 1738: Ljavax/xml/stream/XMLInputFactory;.newInstance ()Ljavax/xml/stream/XMLInputFactory;
+02-13 04:50:17.313 D/dalvikvm( 4207): VFY: replacing opcode 0x71 at 0x0003
+02-13 04:50:17.313 W/dalvikvm( 4207): VFY: unable to find class referenced in signature (Ljavax/xml/stream/XMLEventReader;)
+02-13 04:50:17.333 D/dalvikvm( 4207): GC_FOR_ALLOC freed 204K, 9% free 2828K/3088K, paused 16ms, total 16ms
+02-13 04:50:17.333 W/dalvikvm( 4207): VFY: unable to find class referenced in signature (Ljavax/xml/stream/XMLEventReader;)
+02-13 04:50:17.333 I/dalvikvm( 4207): Could not find method javax.xml.stream.XMLInputFactory.createXMLEventReader, referenced from method org.simpleframework.xml.stream.StreamProvider.provide
+02-13 04:50:17.333 W/dalvikvm( 4207): VFY: unable to resolve virtual method 1736: Ljavax/xml/stream/XMLInputFactory;.createXMLEventReader (Ljava/io/InputStream;)Ljavax/xml/stream/XMLEventReader;
+02-13 04:50:17.333 D/dalvikvm( 4207): VFY: replacing opcode 0x6e at 0x0002
+02-13 04:50:17.333 I/dalvikvm( 4207): Could not find method javax.xml.stream.XMLInputFactory.createXMLEventReader, referenced from method org.simpleframework.xml.stream.StreamProvider.provide
+02-13 04:50:17.333 W/dalvikvm( 4207): VFY: unable to resolve virtual method 1737: Ljavax/xml/stream/XMLInputFactory;.createXMLEventReader (Ljava/io/Reader;)Ljavax/xml/stream/XMLEventReader;
+02-13 04:50:17.333 D/dalvikvm( 4207): VFY: replacing opcode 0x6e at 0x0002
+02-13 04:50:17.353 D/org.doubango.ngn.services.impl.NgnHistoryService( 4207): History loaded
+02-13 04:50:17.363 D/libEGL  ( 4207): loaded /system/lib/egl/libEGL_VIVANTE.so
+02-13 04:50:20.853 D/libEGL  ( 4207): loaded /system/lib/egl/libGLESv1_CM_VIVANTE.so
+02-13 04:50:20.923 D/libEGL  ( 4207): loaded /system/lib/egl/libGLESv2_VIVANTE.so
+02-13 04:50:20.983 E/BufferQueue( 2360): [org.doubango.imsdroid/org.doubango.imsdroid.Screens.ScreenSplash] dequeueBuffer: can't dequeue multiple buffers without setting the buffer count
+02-13 04:50:20.993 D/OpenGLRenderer( 4207): Enabling debug mode 0
+02-13 04:50:20.993 D/org.doubango.ngn.NgnNativeService( 4207): onCreate()
+02-13 04:50:20.993 D/org.doubango.imsdroid.NativeService( 4207): onCreate()
+02-13 04:50:20.993 D/org.doubango.ngn.NgnNativeService( 4207): onStart()
+02-13 04:50:20.993 D/org.doubango.imsdroid.NativeService( 4207): onStart()
+02-13 04:50:21.053 D/org.doubango.imsdroid.Screens.ScreenSplash( 4207): onReceive()
+02-13 04:50:21.053 D/dalvikvm( 4207): Trying to load lib /data/app-lib/org.doubango.imsdroid-2/libhello-uart.so 0x419a9f20
+02-13 04:50:21.063 D/dalvikvm( 4207): Added shared lib /data/app-lib/org.doubango.imsdroid-2/libhello-uart.so 0x419a9f20
+02-13 04:50:21.063 I/ActivityManager( 2649): Displayed org.doubango.imsdroid/.Screens.ScreenSplash: +3s831ms (total +3s969ms)
+02-13 04:50:21.063 I/hello   ( 4207): Entering JNI_OnLoad 
+02-13 04:50:21.063 I/hello   ( 4207): Leaving JNI_OnLoad (result=0x10004)
+02-13 04:50:21.063 I/JNI     ( 4207): Trying to load libhello-uart.so
+02-13 04:50:21.073 I/hello   ( 4207): open uart port device node = /dev/ttymxc3 , ismxc2=0 ismxc3=1
+02-13 04:50:21.073 I/hello   ( 4207): Native_SetUart 0
+02-13 04:50:21.073 I/UartCmd ( 4207): Driving Board portname = ttymxc3 fd = 50
+02-13 04:50:21.073 I/hello   ( 4207): open uart port device node = /dev/ttymxc2 , ismxc2=1 ismxc3=0
+02-13 04:50:21.073 I/hello   ( 4207): Native_SetUart 1
+02-13 04:50:21.073 I/UartCmd ( 4207): DW1000 portname = ttymxc2 fd = 53
+02-13 04:50:21.083 D/dalvikvm( 4207): GC_FOR_ALLOC freed 152K, 7% free 2954K/3168K, paused 13ms, total 13ms
+02-13 04:50:21.083 I/dalvikvm-heap( 4207): Grow heap (frag case) to 3.523MB for 614416-byte allocation
+02-13 04:50:21.103 D/dalvikvm( 4207): GC_FOR_ALLOC freed 1K, 6% free 3552K/3772K, paused 13ms, total 13ms
+02-13 04:50:21.123 I/shinhua ( 4207): Width: 800Height: 432
+02-13 04:50:21.123 I/shinhua ( 4207): desity: 1.0dpi: 160.0
+02-13 04:50:21.123 I/org.doubango.imsdroid.Screens.ScreenXYZsignin( 4207): william oncreate screen login here
+02-13 04:50:21.123 I/shinhua ( 4207): Width: 800Height: 432
+02-13 04:50:21.123 I/shinhua ( 4207): desity: 1.0dpi: 160.0
+02-13 04:50:21.123 I/org.doubango.imsdroid.Screens.ScreenXYZsignin( 4207): william oncreate screen login here
+02-13 04:50:21.133 E/BufferQueue( 2649): [ScreenshotClient] dequeueBuffer: can't dequeue multiple buffers without setting the buffer count
+02-13 04:50:21.173 D/dalvikvm( 2649): GC_FOR_ALLOC freed 649K, 25% free 5646K/7524K, paused 34ms, total 34ms
+02-13 04:50:21.183 D/        ( 2649): AccelSensor enable 1 ,usercount 1, handle 0 ,mEnabled 1
+02-13 04:50:21.183 D/org.doubango.imsdroid.Main( 4207): onActivityResult(0,0)
+02-13 04:50:21.203 V/PhoneStatusBar( 2734): setLightsOn(true)
+02-13 04:50:21.223 E/BufferQueue( 2360): [org.doubango.imsdroid/org.doubango.imsdroid.Main] dequeueBuffer: can't dequeue multiple buffers without setting the buffer count
+02-13 04:50:21.253 I/ActivityManager( 2649): Displayed org.doubango.imsdroid/.Main: +4s162ms
+02-13 04:50:49.763 I/shinhua ( 4207): Login signin button was pressed.
+02-13 04:50:49.773 I/shinhua ( 4207): shinhua oncreate screen login here
+02-13 04:50:49.783 W/audio_hw_primary( 2363): card 0, port 0 device 0x2
+02-13 04:50:49.783 W/audio_hw_primary( 2363): rate 44100, channel 2 period_size 0xc0
+02-13 04:50:49.833 D/dalvikvm( 4207): GC_FOR_ALLOC freed 41K, 3% free 3710K/3816K, paused 13ms, total 15ms
+02-13 04:50:49.833 I/dalvikvm-heap( 4207): Grow heap (frag case) to 4.261MB for 614416-byte allocation
+02-13 04:50:49.853 D/dalvikvm( 4207): GC_FOR_ALLOC freed 178K, 7% free 4132K/4420K, paused 14ms, total 14ms
+02-13 04:50:49.863 I/shinhua ( 4207): shinhua oncreate screen login here
+02-13 04:50:50.643 I/shinhua ( 4207): shinhua editTextUsername = james1 editTextUsername = 0000
+02-13 04:50:50.663 I/org.doubango.imsdroid.Screens.ScreenXYZLogin( 4207): Username = james1 Password = 0000
+02-13 04:50:50.683 I/william ( 4207): Name= james1 Pass = 0000
+02-13 04:50:50.963 D/dalvikvm( 4207): GC_FOR_ALLOC freed 242K, 7% free 4422K/4724K, paused 31ms, total 31ms
+02-13 04:50:50.963 I/william ( 4207): [SettingsDialog] Connected to 61.222.245.149
+02-13 04:50:50.993 I/william ( 4207): Logged in as james1@james-pc/Smack
+02-13 04:50:50.993 I/org.doubango.imsdroid.Screens.ScreenXYZLogin( 4207): james1 Loggin successful
+02-13 04:50:50.993 D/org.doubango.ngn.services.impl.NgnSipService( 4207): register()
+02-13 04:50:50.993 D/org.doubango.ngn.services.impl.NgnSipService( 4207): realm='sip:doubango.org', impu='sip:james1@61.222.245.149', impi='james1'
+02-13 04:50:51.003 D/org.doubango.ngn.services.impl.NgnSipService( 4207): STUN2 - server=stun.l.google.com and port=19302
+02-13 04:50:51.003 D/org.doubango.ngn.services.impl.NgnSipService( 4207): pcscf-host='61.222.245.149', pcscf-port='20060', transport='udp', ipversion='ipv4'
+02-13 04:50:51.013 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): ::1%1
+02-13 04:50:51.013 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): 127.0.0.1
+02-13 04:50:51.013 I/org.doubango.ngn.services.impl.NgnNetworkService( 4207): interface=tunl0 is not up
+02-13 04:50:51.013 I/org.doubango.ngn.services.impl.NgnNetworkService( 4207): interface=sit0 is not up
+02-13 04:50:51.013 I/org.doubango.ngn.services.impl.NgnNetworkService( 4207): interface=ip6tnl0 is not up
+02-13 04:50:51.033 D/dalvikvm( 4207): GC_FOR_ALLOC freed 479K, 13% free 4449K/5112K, paused 15ms, total 15ms
+02-13 04:50:51.033 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): fe80::280:92ff:fe4d:eade%wlan0
+02-13 04:50:51.033 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): 192.168.0.120
+02-13 04:50:51.033 D/org.doubango.ngn.services.impl.NgnSipService( 4207): Local IP='192.168.0.120'
+02-13 04:50:51.033 D/org.doubango.ngn.services.impl.NgnSipService( 4207): TLS - pvk='null' pbk='null' ca='null' verify=false
+02-13 04:50:51.033 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): acquireNetworkLock()
+02-13 04:50:51.033 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): netType=1 and netSubType=0
+02-13 04:50:51.043 D/org.doubango.ngn.services.impl.NgnSipService( 4207): Stack started
+02-13 04:50:51.043 D/org.doubango.ngn.services.impl.NgnSipService( 4207): OnDialogEvent (Dialog connecting,1)
+02-13 04:50:51.043 D/org.doubango.imsdroid.Engine( 4207): showAppNotif
+02-13 04:50:51.043 D/org.doubango.ngn.services.impl.NgnSipService( 4207): OnDialogEvent ((un)REGISTER request successfully sent.,1)
+02-13 04:50:51.053 I/william ( 4207): enter broadcase
+02-13 04:50:51.053 I/org.doubango.imsdroid.Screens.ScreenXYZLogin( 4207): Show main view here
+02-13 04:50:52.023 I/shinhua ( 4207): GameView Constructor
+02-13 04:50:52.033 I/shinhua ( 4207): ArcMenu(Context context ,  AttributeSet attrs)
+02-13 04:50:52.033 I/shinhua ( 4207): ArcLayout(Context context, AttributeSet attrs)
+02-13 04:50:52.033 I/shinhua ( 4207): newCdhildSize: 44
+02-13 04:50:52.073 D/dalvikvm( 4207): GC_FOR_ALLOC freed 105K, 5% free 4898K/5140K, paused 16ms, total 16ms
+02-13 04:50:52.103 I/shinhua ( 4207): params width 133params height133
+02-13 04:50:52.113 I/william ( 4207): change map to 0
+02-13 04:50:52.113 I/ble     ( 4207): board name is SABRESD-MX6DQ
+02-13 04:50:52.113 I/org.doubango.imsdroid.Screens.ScreenDirection( 4207): support BT 4.0
+02-13 04:50:52.113 I/william ( 4207): Enter BLEDeviceScanActivity
+02-13 04:50:52.123 D/BluetoothManagerService( 2649): Message: 20
+02-13 04:50:52.123 D/BluetoothManagerService( 2649): Added callback: android.bluetooth.IBluetoothManagerCallback$Stub$Proxy@41c7f8a8:true
+02-13 04:50:52.123 D/BluetoothAdapter( 4207): startLeScan(): null
+02-13 04:50:52.123 D/BtGatt.GattService( 2985): registerClient() - UUID=76b491c5-ed21-47df-8146-be1f06c79eaa
+02-13 04:50:52.123 D/BtGatt.btif( 2985): btif_gattc_register_app
+02-13 04:50:52.123 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1000
+02-13 04:50:52.123 D/BtGatt.btif( 2985): btif_gattc_upstreams_evt: Event 0
+02-13 04:50:52.123 D/BtGatt.GattService( 2985): onClientRegistered() - UUID=76b491c5-ed21-47df-8146-be1f06c79eaa, clientIf=4
+02-13 04:50:52.123 D/BluetoothAdapter( 4207): onClientRegistered() - status=0 clientIf=4
+02-13 04:50:52.123 D/BtGatt.GattService( 2985): startScan() - queue=0
+02-13 04:50:52.123 D/BtGatt.GattService( 2985): startScan() - adding client=4
+02-13 04:50:52.123 D/BtGatt.btif( 2985): btif_gattc_scan
+02-13 04:50:52.123 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1002
+02-13 04:50:52.123 I/ble     ( 4207): scanLeDeviceStart = true
+02-13 04:50:52.133 D/BluetoothAdapter( 4207): startLeScan(): null
+02-13 04:50:52.133 E/BluetoothAdapter( 4207): LE Scan has already started
+02-13 04:50:52.133 I/william ( 4207):  BLE connect = false
+02-13 04:50:52.133 I/ble     ( 4207): scanLeDeviceStart = false
+02-13 04:50:52.133 D/BluetoothAdapter( 4207): stopLeScan()
+02-13 04:50:52.133 D/BtGatt.GattService( 2985): stopScan() - queue=1
+02-13 04:50:52.133 D/BtGatt.GattService( 2985): stopScan() - queue empty; stopping scan
+02-13 04:50:52.133 D/BtGatt.btif( 2985): btif_gattc_scan
+02-13 04:50:52.133 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1003
+02-13 04:50:52.133 D/BtGatt.GattService( 2985): unregisterClient() - clientIf=4
+02-13 04:50:52.133 D/BtGatt.btif( 2985): btif_gattc_unregister_app
+02-13 04:50:52.133 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1001
+02-13 04:50:52.133 D/BtGatt.btif( 2985): btif_gattc_upstreams_evt: Event 1
+02-13 04:50:52.143 I/shinhua ( 4207): GameView Constructor
+02-13 04:50:52.143 I/shinhua ( 4207): ArcMenu(Context context ,  AttributeSet attrs)
+02-13 04:50:52.143 I/shinhua ( 4207): ArcLayout(Context context, AttributeSet attrs)
+02-13 04:50:52.143 I/shinhua ( 4207): newCdhildSize: 44
+02-13 04:50:52.163 D/dalvikvm( 4207): GC_FOR_ALLOC freed 182K, 5% free 5489K/5732K, paused 16ms, total 17ms
+02-13 04:50:52.183 I/shinhua ( 4207): params width 133params height133
+02-13 04:50:52.193 I/william ( 4207): change map to 0
+02-13 04:50:52.223 I/ble     ( 4207): board name is SABRESD-MX6DQ
+02-13 04:50:52.223 I/org.doubango.imsdroid.Screens.ScreenDirection( 4207): support BT 4.0
+02-13 04:50:52.223 I/william ( 4207): Enter BLEDeviceScanActivity
+02-13 04:50:52.223 D/BluetoothAdapter( 4207): startLeScan(): null
+02-13 04:50:52.223 D/BtGatt.GattService( 2985): registerClient() - UUID=fb89e27e-aa50-46f5-8bec-bfbcce4fcc97
+02-13 04:50:52.223 D/BtGatt.btif( 2985): btif_gattc_register_app
+02-13 04:50:52.223 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1000
+02-13 04:50:52.223 D/BtGatt.btif( 2985): btif_gattc_upstreams_evt: Event 0
+02-13 04:50:52.223 D/BtGatt.GattService( 2985): onClientRegistered() - UUID=fb89e27e-aa50-46f5-8bec-bfbcce4fcc97, clientIf=4
+02-13 04:50:52.223 D/BluetoothAdapter( 4207): onClientRegistered() - status=0 clientIf=4
+02-13 04:50:52.223 D/BtGatt.GattService( 2985): startScan() - queue=0
+02-13 04:50:52.223 D/BtGatt.GattService( 2985): startScan() - adding client=4
+02-13 04:50:52.223 D/BtGatt.btif( 2985): btif_gattc_scan
+02-13 04:50:52.223 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1002
+02-13 04:50:52.223 I/ble     ( 4207): scanLeDeviceStart = true
+02-13 04:50:52.223 D/BluetoothAdapter( 4207): startLeScan(): null
+02-13 04:50:52.223 E/BluetoothAdapter( 4207): LE Scan has already started
+02-13 04:50:52.223 I/william ( 4207):  BLE connect = false
+02-13 04:50:52.233 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.233 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.233 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.233 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.233 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.233 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.233 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.233 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.243 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.243 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.243 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.243 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.243 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.243 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.243 I/shinhua ( 4207): ArcLayout onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+02-13 04:50:52.243 I/shinhua ( 4207): onMeasure size: 225
+02-13 04:50:52.243 I/shinhua ( 4207): ArcLayout onLayout(boolean changed, int l, int t, int r, int b)
+02-13 04:50:52.243 I/shinhua ( 4207): centerX: 112 centerY: 112 gw: 225 gh: 225
+02-13 04:50:52.253 I/jamesdebug( 4207): Draw target = 9 , 8
+02-13 04:50:52.253 I/william ( 4207): drawcircleflag = false
+02-13 04:50:53.323 I/jamesdebug( 4207): source =1 1 1 1
+02-13 04:50:54.353 I/william ( 4207): Robot start running555
+02-13 04:50:54.353 I/william ( 4207): Robot start running666
+02-13 04:50:54.353 I/william ( 4207): Robot start running
+02-13 04:50:54.353 I/william ( 4207): Robot start running222
+02-13 04:50:54.383 I/jamesdebug( 4207): Draw target = 9 , 8
+02-13 04:50:54.383 I/william ( 4207): drawcircleflag = true
+02-13 04:50:54.383 I/william ( 4207): Draw Circle X , Y ( 6 3 )
+02-13 04:50:56.283 W/audio_hw_primary( 2363): do_out_standby... 1074145152
+02-13 04:50:57.113 I/shinhua1( 4207): level -53
+02-13 04:50:57.193 I/shinhua1( 4207): level -53
+02-13 04:50:58.113 I/william ( 4207):  BLE connect = false
+02-13 04:50:58.113 I/shinhua1( 4207): connectStatus BLE disconnected
+02-13 04:50:59.113 I/william ( 4207):  BLE connect = false
+02-13 04:50:59.113 I/shinhua1( 4207): connectStatus BLE disconnected
+02-13 04:51:02.113 I/shinhua1( 4207): level -57
+02-13 04:51:02.123 D/BluetoothAdapter( 4207): stopLeScan()
+02-13 04:51:02.123 D/BtGatt.GattService( 2985): stopScan() - queue=1
+02-13 04:51:02.123 D/BtGatt.GattService( 2985): stopScan() - queue empty; stopping scan
+02-13 04:51:02.123 D/BtGatt.btif( 2985): btif_gattc_scan
+02-13 04:51:02.123 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1003
+02-13 04:51:02.123 D/BtGatt.GattService( 2985): unregisterClient() - clientIf=4
+02-13 04:51:02.123 D/BtGatt.btif( 2985): btif_gattc_unregister_app
+02-13 04:51:02.123 D/BtGatt.btif( 2985): btgattc_handle_event: Event 1001
+02-13 04:51:02.123 D/BtGatt.btif( 2985): btif_gattc_upstreams_evt: Event 1
+02-13 04:51:02.193 I/shinhua1( 4207): level -57
+02-13 04:51:02.223 D/BluetoothAdapter( 4207): stopLeScan()
+02-13 04:51:07.113 I/shinhua1( 4207): level -59
+02-13 04:51:07.193 I/shinhua1( 4207): level -59
+02-13 04:51:12.113 I/shinhua1( 4207): level -58
+02-13 04:51:12.193 I/shinhua1( 4207): level -58
+02-13 04:51:17.113 I/shinhua1( 4207): level -58
+02-13 04:51:17.193 I/shinhua1( 4207): level -58
+02-13 04:51:22.113 I/shinhua1( 4207): level -56
+02-13 04:51:22.193 I/shinhua1( 4207): level -56
+02-13 04:51:23.043 D/org.doubango.ngn.services.impl.NgnSipService( 4207): OnDialogEvent (Transport error.,1)
+02-13 04:51:23.043 D/org.doubango.ngn.services.impl.NgnSipService( 4207): OnDialogEvent (Dialog terminated,1)
+02-13 04:51:23.043 D/org.doubango.imsdroid.Engine( 4207): showAppNotif
+02-13 04:51:23.043 D/org.doubango.ngn.services.impl.NgnNetworkService( 4207): releaseNetworkLock()
+02-13 04:51:23.043 D/org.doubango.ngn.services.impl.NgnSipService( 4207): Stack stopped
+02-13 04:51:23.053 I/william ( 4207): enter broadcase
+02-13 04:51:23.053 I/org.doubango.imsdroid.Screens.ScreenXYZLogin( 4207): Show main view here
+
